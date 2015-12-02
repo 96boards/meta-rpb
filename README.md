@@ -35,4 +35,9 @@ Reporting bugs
 
 The github issue tracker (https://github.com/96boards/meta-rpb/issues) is being used to keep track of bugs.
 
-Maintainers: Koen Kooi <koen.kooi@linaro.org>
+Maintainers
+-------------------------
+
+* Koen Kooi <koen.kooi@linaro.org>
+* Nicolas Dechesne <nicolas.dechesne@linaro.org>
+* Fathi Boudra <mailto:fathi.boudra@linaro.org>
