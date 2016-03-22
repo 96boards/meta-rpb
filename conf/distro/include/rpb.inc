@@ -1,3 +1,5 @@
+DISTRO_VERSION = "2.0+linaro"
+
 GCCVERSION ?= "linaro-5.2"
 
 DISTRO_FEATURES_append = " systemd"
