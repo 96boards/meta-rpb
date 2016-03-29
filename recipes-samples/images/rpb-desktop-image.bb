@@ -11,7 +11,7 @@ REQUIRED_DISTRO_FEATURES = "x11 pam systemd"
 
 CORE_IMAGE_BASE_INSTALL += " \
     coreutils gptfdisk kernel-modules connman 96boards-tools \
-    mesa-demos gtkperf openbox xterm xf86-video-modesetting \
+    mesa-demos gtkperf openbox openbox-theme-clearlooks xterm xf86-video-modesetting \
 "
 
 EXTRA_USERS_PARAMS = "\
