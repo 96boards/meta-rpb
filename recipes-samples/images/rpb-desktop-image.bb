@@ -1,6 +1,6 @@
 SUMMARY = "Basic X11 graphics image"
 
-IMAGE_FEATURES += "splash package-management ssh-server-dropbear hwcodecs x11"
+IMAGE_FEATURES += "splash package-management debug-tweaks ssh-server-dropbear hwcodecs x11"
 
 LICENSE = "MIT"
 

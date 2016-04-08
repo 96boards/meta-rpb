@@ -8,8 +8,6 @@ PACKAGECONFIG_append_pn-systemd = " resolved networkd"
 
 DISTRO_FEATURES_remove = "sysvinit"
 
-IMAGE_FEATURES_append = " debug-tweaks ssh-server-dropbear"
-
 DISTRO_FEATURES_append = " opengl pam"
 
 INHERIT += "rm_work"
