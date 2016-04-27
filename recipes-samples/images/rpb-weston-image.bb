@@ -12,6 +12,7 @@ REQUIRED_DISTRO_FEATURES = "wayland pam systemd"
 CORE_IMAGE_BASE_INSTALL += " \
     coreutils gptfdisk kernel-modules connman 96boards-tools \
     weston weston-examples clutter-1.0-examples \
+    sshfs-fuse \
 "
 
 EXTRA_USERS_PARAMS = "\

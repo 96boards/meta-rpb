@@ -11,6 +11,7 @@ REQUIRED_DISTRO_FEATURES = "pam systemd"
 
 CORE_IMAGE_BASE_INSTALL += " \
     coreutils gptfdisk kernel-modules connman 96boards-tools \
+    sshfs-fuse \
 "
 
 EXTRA_USERS_PARAMS = "\
