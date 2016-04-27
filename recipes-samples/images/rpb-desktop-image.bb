@@ -1,6 +1,6 @@
 SUMMARY = "Basic X11 graphics image"
 
-IMAGE_FEATURES += "splash package-management ssh-server-dropbear hwcodecs x11"
+IMAGE_FEATURES += "splash package-management debug-tweaks ssh-server-openssh hwcodecs x11"
 
 LICENSE = "MIT"
 
@@ -12,6 +12,7 @@ REQUIRED_DISTRO_FEATURES = "x11 pam systemd"
 CORE_IMAGE_BASE_INSTALL += " \
     coreutils gptfdisk kernel-modules connman 96boards-tools \
     mesa-demos gtkperf openbox openbox-theme-clearlooks xterm xf86-video-modesetting \
+    sshfs-fuse \
 "
 
 EXTRA_USERS_PARAMS = "\
