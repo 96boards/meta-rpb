@@ -1,6 +1,6 @@
 SUMMARY = "Basic console image"
 
-IMAGE_FEATURES += "splash package-management debug-tweaks ssh-server-dropbear hwcodecs"
+IMAGE_FEATURES += "splash package-management debug-tweaks ssh-server-openssh hwcodecs"
 
 LICENSE = "MIT"
 
