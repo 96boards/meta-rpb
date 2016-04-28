@@ -1,6 +1,6 @@
 SUMMARY = "Basic console image"
 
-IMAGE_FEATURES += "splash package-management debug-tweaks ssh-server-openssh hwcodecs"
+IMAGE_FEATURES += "splash package-management debug-tweaks ssh-server-openssh hwcodecs tools-debug"
 
 LICENSE = "MIT"
 
@@ -10,8 +10,8 @@ inherit core-image distro_features_check extrausers
 REQUIRED_DISTRO_FEATURES = "pam systemd"
 
 CORE_IMAGE_BASE_INSTALL += " \
-    coreutils gptfdisk kernel-modules connman 96boards-tools \
-    sshfs-fuse \
+    coreutils gptfdisk kernel-modules connman connman-client 96boards-tools \
+    sshfs-fuse hostapd iptables \
 "
 
 EXTRA_USERS_PARAMS = "\
