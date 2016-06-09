@@ -5,6 +5,7 @@ GCCVERSION ?= "linaro-5.2"
 DISTRO_FEATURES_append = " systemd"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 PACKAGECONFIG_append_pn-systemd = " resolved networkd"
+PACKAGECONFIG_remove_pn-gpsd = "qt"
 
 DISTRO_FEATURES_remove = "sysvinit"
 
