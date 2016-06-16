@@ -14,6 +14,7 @@ CORE_IMAGE_BASE_INSTALL += " \
     weston weston-examples clutter-1.0-examples \
     sshfs-fuse hostapd iptables \
     alsa-utils-aplay gstreamer1.0-plugins-bad-meta gstreamer1.0-plugins-base-meta gstreamer1.0-plugins-good-meta \
+    ${@bb.utils.contains("MACHINE_FEATURES", "optee", "optee-test optee-client", "", d)} \
 "
 
 EXTRA_USERS_PARAMS = "\

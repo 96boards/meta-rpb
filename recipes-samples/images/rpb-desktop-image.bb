@@ -15,6 +15,7 @@ CORE_IMAGE_BASE_INSTALL += " \
     sshfs-fuse hostapd iptables \
     alsa-utils-aplay gstreamer1.0-plugins-bad-meta gstreamer1.0-plugins-base-meta gstreamer1.0-plugins-good-meta \
     gpsd gps-utils \
+    ${@bb.utils.contains("MACHINE_FEATURES", "optee", "optee-test optee-client", "", d)} \
 "
 
 EXTRA_USERS_PARAMS = "\
