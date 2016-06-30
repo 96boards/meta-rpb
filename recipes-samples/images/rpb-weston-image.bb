@@ -9,9 +9,11 @@ inherit core-image distro_features_check extrausers
 # let's make sure we have a good image..
 REQUIRED_DISTRO_FEATURES = "wayland pam systemd"
 
-# FIXME : adding "mali450-userland" to MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS
-#   if @bb.utils.contains('DISTRO_FEATURES', 'opengl',... might be a better
-#   approach than defining the "mali450" MACHINE_FEATURE
+# FIXME Mali is currently added as a machine feature
+# meta-qcom is using a different approach with
+#   MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS
+#   ${@bb.utils.contains('DISTRO_FEATURES', 'wifi', 'wcnss-config', '', d)}
+# http://git.yoctoproject.org/cgit/cgit.cgi/meta-qcom/tree/conf/machine/dragonboard-410c.conf#n37
 CORE_IMAGE_BASE_INSTALL += " \
     coreutils gptfdisk kernel-modules connman connman-client 96boards-tools \
     weston weston-examples clutter-1.0-examples \
