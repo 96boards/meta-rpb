@@ -10,8 +10,15 @@ inherit core-image distro_features_check extrausers
 REQUIRED_DISTRO_FEATURES = "pam systemd"
 
 CORE_IMAGE_BASE_INSTALL += " \
-    coreutils gptfdisk kernel-modules connman connman-client 96boards-tools \
-    sshfs-fuse hostapd iptables \
+    96boards-tools \
+    connman \
+    connman-client \
+    coreutils \
+    gptfdisk \
+    hostapd \
+    iptables \
+    kernel-modules \
+    sshfs-fuse \
     ${@bb.utils.contains("MACHINE_FEATURES", "optee", "optee-test optee-client", "", d)} \
 "
 

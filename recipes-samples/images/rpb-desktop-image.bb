@@ -10,11 +10,28 @@ inherit core-image distro_features_check extrausers
 REQUIRED_DISTRO_FEATURES = "x11 pam systemd"
 
 CORE_IMAGE_BASE_INSTALL += " \
-    coreutils gptfdisk kernel-modules connman connman-client 96boards-tools \
-    mesa-demos glmark2 gtkperf openbox openbox-theme-clearlooks xterm xf86-video-modesetting \
-    sshfs-fuse hostapd iptables \
-    alsa-utils-aplay gstreamer1.0-plugins-bad-meta gstreamer1.0-plugins-base-meta gstreamer1.0-plugins-good-meta \
-    gpsd gps-utils \
+    96boards-tools \
+    alsa-utils-aplay \
+    connman \
+    connman-client \
+    coreutils \
+    glmark2 \
+    gps-utils \
+    gpsd \
+    gptfdisk \
+    gstreamer1.0-plugins-bad-meta \
+    gstreamer1.0-plugins-base-meta \
+    gstreamer1.0-plugins-good-meta \
+    gtkperf \
+    hostapd \
+    iptables \
+    kernel-modules \
+    mesa-demos \
+    openbox \
+    openbox-theme-clearlooks \
+    sshfs-fuse \
+    xf86-video-modesetting \
+    xterm \
     ${@bb.utils.contains("MACHINE_FEATURES", "optee", "optee-test optee-client", "", d)} \
 "
 
