@@ -15,10 +15,22 @@ REQUIRED_DISTRO_FEATURES = "wayland pam systemd"
 #   ${@bb.utils.contains('DISTRO_FEATURES', 'wifi', 'wcnss-config', '', d)}
 # http://git.yoctoproject.org/cgit/cgit.cgi/meta-qcom/tree/conf/machine/dragonboard-410c.conf#n37
 CORE_IMAGE_BASE_INSTALL += " \
-    coreutils gptfdisk kernel-modules connman connman-client 96boards-tools \
-    weston weston-examples clutter-1.0-examples \
-    sshfs-fuse hostapd iptables \
-    alsa-utils-aplay gstreamer1.0-plugins-bad-meta gstreamer1.0-plugins-base-meta gstreamer1.0-plugins-good-meta \
+    96boards-tools \
+    alsa-utils-aplay \
+    clutter-1.0-examples \
+    connman \
+    connman-client \
+    coreutils \
+    gptfdisk \
+    gstreamer1.0-plugins-bad-meta \
+    gstreamer1.0-plugins-base-meta \
+    gstreamer1.0-plugins-good-meta \
+    hostapd \
+    iptables \
+    kernel-modules \
+    sshfs-fuse \
+    weston \
+    weston-examples \
     ${@bb.utils.contains("MACHINE_FEATURES", "optee", "optee-test optee-client", "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "mali450", "mali450-userland", "", d)} \
 "
