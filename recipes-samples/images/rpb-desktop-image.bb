@@ -15,7 +15,6 @@ CORE_IMAGE_BASE_INSTALL += " \
     connman \
     connman-client \
     coreutils \
-    glmark2 \
     gps-utils \
     gpsd \
     gptfdisk \
