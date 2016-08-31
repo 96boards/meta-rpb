@@ -1,5 +1,7 @@
 DISTRO_VERSION = "2.0+linaro"
 
+require conf/distro/include/arm-defaults.inc
+
 GCCVERSION ?= "linaro-5.2"
 
 DISTRO_FEATURES_append = " systemd"
