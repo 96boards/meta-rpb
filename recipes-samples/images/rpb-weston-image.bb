@@ -18,8 +18,8 @@ CORE_IMAGE_BASE_INSTALL += " \
     96boards-tools \
     alsa-utils-aplay \
     clutter-1.0-examples \
-    connman \
-    connman-client \
+    networkmanager \
+    networkmanager-nmtui \
     coreutils \
     gptfdisk \
     gstreamer1.0-plugins-bad-meta \
