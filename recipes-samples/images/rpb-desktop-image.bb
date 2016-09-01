@@ -12,8 +12,8 @@ REQUIRED_DISTRO_FEATURES = "x11 pam systemd"
 CORE_IMAGE_BASE_INSTALL += " \
     96boards-tools \
     alsa-utils-aplay \
-    connman \
-    connman-client \
+    networkmanager \
+    networkmanager-nmtui \
     coreutils \
     gps-utils \
     gpsd \

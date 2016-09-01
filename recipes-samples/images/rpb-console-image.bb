@@ -11,8 +11,8 @@ REQUIRED_DISTRO_FEATURES = "pam systemd"
 
 CORE_IMAGE_BASE_INSTALL += " \
     96boards-tools \
-    connman \
-    connman-client \
+    networkmanager \
+    networkmanager-nmtui \
     coreutils \
     gptfdisk \
     hostapd \
