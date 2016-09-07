@@ -21,6 +21,7 @@ CORE_IMAGE_BASE_INSTALL += " \
     gstreamer1.0-plugins-bad-meta \
     gstreamer1.0-plugins-base-meta \
     gstreamer1.0-plugins-good-meta \
+    ${@bb.utils.contains("LICENSE_FLAGS_WHITELIST", "commercial_gstreamer1.0-libav", "gstreamer1.0-libav", "", d)} \
     gtkperf \
     hostapd \
     iptables \
