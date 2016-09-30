@@ -12,4 +12,6 @@ CORE_IMAGE_BASE_INSTALL += " \
     python-scons \
     python-shell \
     python-threading \
+    \
+    piglit \
     "
