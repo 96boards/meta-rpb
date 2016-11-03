@@ -4,6 +4,7 @@ TARGET_VENDOR = "-linaro"
 
 require conf/distro/include/arm-defaults.inc
 require conf/distro/include/egl.inc
+require conf/distro/include/distro-multilib.inc
 
 GCCVERSION ?= "linaro-5.2"
 
