@@ -1,5 +1,7 @@
 DISTRO_VERSION = "2.0+linaro"
 
+TARGET_VENDOR = "-linaro"
+
 require conf/distro/include/arm-defaults.inc
 require conf/distro/include/mali.inc
 
