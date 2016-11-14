@@ -3,7 +3,7 @@ DISTRO_VERSION = "2.0+linaro"
 TARGET_VENDOR = "-linaro"
 
 require conf/distro/include/arm-defaults.inc
-require conf/distro/include/mali.inc
+require conf/distro/include/egl.inc
 
 GCCVERSION ?= "linaro-5.2"
 
