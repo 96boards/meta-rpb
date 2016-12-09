@@ -4,7 +4,9 @@ TARGET_VENDOR = "-linaro"
 
 require conf/distro/include/arm-defaults.inc
 require conf/distro/include/egl.inc
-require conf/distro/include/distro-multilib.inc
+
+# Python3 isn't /lib64 safe
+#require conf/distro/include/distro-multilib.inc
 
 GCCVERSION ?= "linaro-5.2"
 
