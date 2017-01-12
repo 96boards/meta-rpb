@@ -10,5 +10,7 @@ CORE_IMAGE_BASE_INSTALL += " \
     python-modules \
     python-numpy \
     python-scons \
+    python-pyyaml \
+    python-pexpect \
     "
 
