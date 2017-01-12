@@ -7,11 +7,9 @@ CORE_IMAGE_BASE_INSTALL += " \
     \
     python \
     python-misc \
-    python-multiprocessing \
+    python-modules \
     python-numpy \
     python-scons \
-    python-shell \
-    python-threading \
     \
     piglit \
     "
