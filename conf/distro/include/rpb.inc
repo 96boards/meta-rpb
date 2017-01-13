@@ -6,7 +6,7 @@ require conf/distro/include/arm-defaults.inc
 require conf/distro/include/egl.inc
 require conf/distro/include/distro-multilib.inc
 
-GCCVERSION ?= "linaro-5.2"
+GCCVERSION ?= "linaro-6.2"
 
 DISTRO_FEATURES_append = " systemd"
 VIRTUAL-RUNTIME_init_manager = "systemd"
