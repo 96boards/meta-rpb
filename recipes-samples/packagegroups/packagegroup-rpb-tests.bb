@@ -7,7 +7,7 @@ PACKAGES = "\
     packagegroup-rpb-tests \
     packagegroup-rpb-tests-console \
     packagegroup-rpb-tests-python \
-    packagegroup-rpb-tests-x11 \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'packagegroup-rpb-tests-x11', '', d)} \
     "
 
 # contains basic dependencies, that don't need graphics/display
