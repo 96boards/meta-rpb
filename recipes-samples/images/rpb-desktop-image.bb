@@ -19,6 +19,8 @@ CORE_IMAGE_BASE_INSTALL += " \
     networkmanager \
     networkmanager-nmtui \
     coreutils \
+    cpufrequtils \
+    glmark2 \
     gps-utils \
     gpsd \
     gptfdisk \
@@ -28,6 +30,7 @@ CORE_IMAGE_BASE_INSTALL += " \
     ${@bb.utils.contains("LICENSE_FLAGS_WHITELIST", "commercial_gstreamer1.0-libav", "gstreamer1.0-libav", "", d)} \
     gtkperf \
     hostapd \
+    htop \
     iptables \
     kernel-modules \
     mesa-demos \
