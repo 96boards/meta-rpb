@@ -14,8 +14,10 @@ CORE_IMAGE_BASE_INSTALL += " \
     networkmanager \
     networkmanager-nmtui \
     coreutils \
+    cpufrequtils \
     gptfdisk \
     hostapd \
+    htop \
     iptables \
     kernel-modules \
     sshfs-fuse \
