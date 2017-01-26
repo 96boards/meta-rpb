@@ -21,5 +21,5 @@ CORE_IMAGE_BASE_INSTALL += " \
 
 EXTRA_USERS_PARAMS = "\
 useradd -p '' linaro; \
-usermod -a -G weston-launch linaro; \
+usermod -a -G weston-launch,video linaro; \
 "
