@@ -14,32 +14,8 @@ REQUIRED_DISTRO_FEATURES = "x11 pam systemd"
 SYSTEMD_DEFAULT_TARGET = "graphical.target"
 
 CORE_IMAGE_BASE_INSTALL += " \
-    96boards-tools \
-    alsa-utils-aplay \
-    networkmanager \
-    networkmanager-nmtui \
-    coreutils \
-    cpufrequtils \
-    glmark2 \
-    gps-utils \
-    gpsd \
-    gptfdisk \
-    gstreamer1.0-plugins-bad-meta \
-    gstreamer1.0-plugins-base-meta \
-    gstreamer1.0-plugins-good-meta \
-    ${@bb.utils.contains("LICENSE_FLAGS_WHITELIST", "commercial_gstreamer1.0-libav", "gstreamer1.0-libav", "", d)} \
-    gtkperf \
-    hostapd \
-    htop \
-    iptables \
-    kernel-modules \
-    mesa-demos \
-    openbox \
-    openbox-theme-clearlooks \
-    sshfs-fuse \
-    xf86-video-modesetting \
-    xterm \
-    ${@bb.utils.contains("MACHINE_FEATURES", "optee", "optee-test optee-client", "", d)} \
+    packagegroup-rpb \
+    packagegroup-rpb-x11 \
 "
 
 EXTRA_USERS_PARAMS = "\

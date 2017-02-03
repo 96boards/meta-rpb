@@ -15,29 +15,8 @@ REQUIRED_DISTRO_FEATURES = "wayland pam systemd"
 #   ${@bb.utils.contains('DISTRO_FEATURES', 'wifi', 'wcnss-config', '', d)}
 # http://git.yoctoproject.org/cgit/cgit.cgi/meta-qcom/tree/conf/machine/dragonboard-410c.conf#n37
 CORE_IMAGE_BASE_INSTALL += " \
-    96boards-tools \
-    alsa-utils-aplay \
-    clutter-1.0-examples \
-    networkmanager \
-    networkmanager-nmtui \
-    coreutils \
-    cpufrequtils \
-    gptfdisk \
-    gstreamer1.0-plugins-bad-meta \
-    gstreamer1.0-plugins-base-meta \
-    gstreamer1.0-plugins-good-meta \
-    ${@bb.utils.contains("LICENSE_FLAGS_WHITELIST", "commercial_gstreamer1.0-libav", "gstreamer1.0-libav", "", d)} \
-    hostapd \
-    htop \
-    iptables \
-    kernel-modules \
-    sshfs-fuse \
-    weston \
-    weston-examples \
-    weston-init \
-    ${@bb.utils.contains("MACHINE_FEATURES", "optee", "optee-test optee-client", "", d)} \
-    ${@bb.utils.contains("MACHINE_FEATURES", "mali450", "mali450-userland", "", d)} \
-    ${@bb.utils.contains("MACHINE_FEATURES", "sgx", "libgbm ti-sgx-ddk-km ti-sgx-ddk-um pru-icss", "", d)} \
+    packagegroup-rpb \
+    packagegroup-rpb-weston \
 "
 
 EXTRA_USERS_PARAMS = "\
