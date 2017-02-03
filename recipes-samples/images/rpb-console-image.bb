@@ -10,18 +10,7 @@ inherit core-image distro_features_check extrausers
 REQUIRED_DISTRO_FEATURES = "pam systemd"
 
 CORE_IMAGE_BASE_INSTALL += " \
-    96boards-tools \
-    networkmanager \
-    networkmanager-nmtui \
-    coreutils \
-    cpufrequtils \
-    gptfdisk \
-    hostapd \
-    htop \
-    iptables \
-    kernel-modules \
-    sshfs-fuse \
-    ${@bb.utils.contains("MACHINE_FEATURES", "optee", "optee-test optee-client", "", d)} \
+    packagegroup-rpb \
 "
 
 EXTRA_USERS_PARAMS = "\
