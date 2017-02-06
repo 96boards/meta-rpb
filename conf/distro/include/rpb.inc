@@ -24,3 +24,5 @@ INHERIT += "rm_work"
 INHERIT += "buildhistory"
 INHERIT += "image-buildinfo"
 BUILDHISTORY_COMMIT = "1"
+
+EXTRA_OEMAKE += "-e MAKEFLAGS="
