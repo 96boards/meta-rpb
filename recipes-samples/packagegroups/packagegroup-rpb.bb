@@ -8,6 +8,7 @@ RDEPENDS_packagegroup-rpb = "\
     alsa-utils-aplay \
     coreutils \
     cpufrequtils \
+    docker \
     gptfdisk \
     hostapd \
     htop \
