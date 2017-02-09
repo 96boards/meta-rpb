@@ -30,6 +30,7 @@ RDEPENDS_packagegroup-rpb = "\
     networkmanager \
     networkmanager-nmtui \
     ${@bb.utils.contains("MACHINE_FEATURES", "optee", "optee-test optee-client", "", d)} \
+    rsync \
     sshfs-fuse \
     "
 
