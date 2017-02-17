@@ -40,6 +40,9 @@ PACKAGECONFIG_append_pn-gstreamer1.0-plugins-bad = " kms"
 
 LICENSE_FLAGS_WHITELIST += "commercial_gstreamer1.0-libav commercial_ffmpeg commercial_x264"
 
+# Linaro-image-lng includes netperf
+LICENSE_FLAGS_WHITELIST += "non-commercial"
+
 # Avoid to duplicate the rootfs tarball by generating both tar.gz/tar.xz
 IMAGE_FSTYPES_remove = "tar.gz"
 
