@@ -4,7 +4,19 @@ TARGET_VENDOR = "-linaro"
 
 require conf/distro/include/arm-defaults.inc
 require conf/distro/include/egl.inc
-require conf/distro/include/distro-multilib.inc
+
+# Enable multilib conditionally
+def get_multilib_handler(d):
+    features = d.getVar('TUNE_FEATURES', True).split()
+    if 'aarch64' in features:
+        distro_multilib = "conf/distro/include/distro-multilib.inc"
+    else:
+        distro_multilib = "conf/distro/include/file-cannot-be-found.inc"
+    return distro_multilib
+
+# Use a weak include to avoid to produce an error when the file cannot be found.
+# It is the case when we don't want multilib enabled (e.g. on 32bit machines).
+include ${@get_multilib_handler(d)}
 
 GCCVERSION ?= "linaro-6.2"
 
