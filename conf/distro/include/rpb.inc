@@ -18,7 +18,7 @@ def get_multilib_handler(d):
 # It is the case when we don't want multilib enabled (e.g. on 32bit machines).
 include ${@get_multilib_handler(d)}
 
-GCCVERSION ?= "linaro-6.2"
+GCCVERSION ?= "linaro-6.%"
 
 DISTRO_FEATURES_append = " systemd"
 VIRTUAL-RUNTIME_init_manager = "systemd"
