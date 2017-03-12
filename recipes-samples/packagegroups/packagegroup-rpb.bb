@@ -2,13 +2,16 @@ SUMMARY = "Organize packages to avoid duplication across all images"
 
 inherit packagegroup
 
+DOCKER = "docker"
+DOCKER_armv7a = ""
+
 # contains basic dependencies, that can work without graphics/display
 RDEPENDS_packagegroup-rpb = "\
     96boards-tools \
     alsa-utils-aplay \
     coreutils \
     cpufrequtils \
-    docker \
+    ${DOCKER} \
     gptfdisk \
     hostapd \
     htop \
