@@ -18,7 +18,7 @@ def get_multilib_handler(d):
 # It is the case when we don't want multilib enabled (e.g. on 32bit machines).
 include ${@get_multilib_handler(d)}
 
-GCCVERSION ?= "linaro-6.2"
+GCCVERSION ?= "linaro-6.%"
 
 DISTRO_FEATURES_append = " systemd"
 VIRTUAL-RUNTIME_init_manager = "systemd"
@@ -26,7 +26,7 @@ PACKAGECONFIG_append_pn-systemd = " resolved networkd"
 PACKAGECONFIG_append_pn-qtbase = " gles2 fontconfig examples"
 PACKAGECONFIG_remove_pn-gpsd = "qt"
 
-LICENSE_FLAGS_WHITELIST += "commercial_gstreamer1.0-libav commercial_ffmpeg commercial_x264"
+LICENSE_FLAGS_WHITELIST += "commercial_gstreamer1.0-libav commercial_ffmpeg commercial_x264 non-commercial"
 
 DISTRO_FEATURES_remove = "sysvinit"
 
