@@ -32,10 +32,6 @@ DISTRO_FEATURES_remove = "sysvinit"
 
 DISTRO_FEATURES_append = " opengl pam"
 
-# Fastboot expects an ext4 image, which needs to be 4096 aligned
-IMAGE_FSTYPES_append = " ext4.gz"
-IMAGE_ROOTFS_ALIGNMENT = "4096"
-
 INHERIT += "rm_work"
 INHERIT += "buildhistory"
 INHERIT += "image-buildinfo"
