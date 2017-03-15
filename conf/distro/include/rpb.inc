@@ -32,6 +32,9 @@ DISTRO_FEATURES_remove = "sysvinit"
 
 DISTRO_FEATURES_append = " opengl pam"
 
+# Avoid to duplicate the rootfs tarball by generating both tar.gz/tar.xz
+IMAGE_FSTYPES_remove = "tar.gz"
+
 INHERIT += "rm_work"
 INHERIT += "buildhistory"
 INHERIT += "image-buildinfo"
