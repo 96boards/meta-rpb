@@ -5,10 +5,12 @@ TARGET_VENDOR = "-linaro"
 require conf/distro/include/arm-defaults.inc
 require conf/distro/include/egl.inc
 
-# Enable multilib conditionally
+# Enable multilib conditionally, only for aarch64 with default toolchain combination
+# Other combinations aren't supported
 def get_multilib_handler(d):
     features = d.getVar('TUNE_FEATURES', True).split()
-    if 'aarch64' in features:
+    tcmode = d.getVar('TCMODE', True)
+    if ('aarch64' in features) and (tcmode == "default"):
         distro_multilib = "conf/distro/include/distro-multilib.inc"
     else:
         distro_multilib = "conf/distro/include/file-cannot-be-found.inc"
