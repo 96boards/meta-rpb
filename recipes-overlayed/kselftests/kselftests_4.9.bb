@@ -55,10 +55,7 @@ EXTRA_OEMAKE += "-C tools/testing/selftests TARGETS="${TARGETS}" INSTALL_PATH=${
 # Their Makefiles are so sloppy, let's clean up a bit
 do_configure () {
 	sed "s|^CC := .*||g" -i ${S}/tools/testing/selftests/lib.mk
-	sed "s|^CC = .*||g" -i ${S}/tools/testing/selftests/timers/Makefile
-	sed "s|^CC = .*||g" -i ${S}/tools/testing/selftests/memfd/Makefile
-	sed "s|^CC := .*||g" -i ${S}/tools/testing/selftests/powerpc/switch_endian/Makefile
-	sed "s|gcc|\$(CC)|g" -i ${S}/tools/testing/selftests/breakpoints/Makefile
+	sed "s|^CC = .*||g" -i ${S}/tools/testing/selftests/timers/Makefile ${S}/tools/testing/selftests/memfd/Makefile
 	sed "s|TARGETS|F_TARGETS|g" -i ${S}/tools/testing/selftests/futex/functional/Makefile
 	sed "s|^LDFLAGS += -lpthread|LDLIBS += -lpthread|g" -i ${S}/tools/testing/selftests/seccomp/Makefile
 	sed "s|^LDFLAGS += -lrt -lpthread|LDLIBS += -lrt -lpthread|g" -i ${S}/tools/testing/selftests/timers/Makefile
