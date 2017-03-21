@@ -25,7 +25,6 @@ RDEPENDS_packagegroup-rpb-tests-python = "\
     python-numpy \
     python-pexpect \
     python-pyyaml \
-    python-scons \
     "
 
 SUMMARY_packagegroup-rpb-tests-console = "Test apps that can be used in console (no graphics)"
