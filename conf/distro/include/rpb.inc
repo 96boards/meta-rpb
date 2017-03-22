@@ -23,7 +23,7 @@ include ${@get_multilib_handler(d)}
 GCCVERSION ?= "linaro-6.%"
 
 DISTRO_FEATURES_append = " opengl pam systemd"
-DISTRO_FEATURES_remove = "sysvinit"
+DISTRO_FEATURES_remove = "3g sysvinit"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 PACKAGECONFIG_append_pn-systemd = " resolved networkd"
 PACKAGECONFIG_append_pn-qtbase = " gles2 fontconfig examples"
