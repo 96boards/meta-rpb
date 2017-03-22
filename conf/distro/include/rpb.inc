@@ -22,17 +22,14 @@ include ${@get_multilib_handler(d)}
 
 GCCVERSION ?= "linaro-6.%"
 
-DISTRO_FEATURES_append = " systemd"
+DISTRO_FEATURES_append = " opengl pam systemd"
+DISTRO_FEATURES_remove = "sysvinit"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 PACKAGECONFIG_append_pn-systemd = " resolved networkd"
 PACKAGECONFIG_append_pn-qtbase = " gles2 fontconfig examples"
 PACKAGECONFIG_remove_pn-gpsd = "qt"
 
 LICENSE_FLAGS_WHITELIST += "commercial_gstreamer1.0-libav commercial_ffmpeg commercial_x264 non-commercial"
-
-DISTRO_FEATURES_remove = "sysvinit"
-
-DISTRO_FEATURES_append = " opengl pam"
 
 # Avoid to duplicate the rootfs tarball by generating both tar.gz/tar.xz
 IMAGE_FSTYPES_remove = "tar.gz"
