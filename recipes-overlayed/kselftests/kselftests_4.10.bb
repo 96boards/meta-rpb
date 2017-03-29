@@ -128,7 +128,7 @@ RDEPENDS_${PN}-efivarfs += "bash"
 RDEPENDS_${PN}-futex += "bash ncurses"
 RDEPENDS_${PN}-memory-hotplug += "bash"
 RDEPENDS_${PN}-net += "bash"
-RDEPENDS_${PN}-vm += "bash"
+RDEPENDS_${PN}-vm += "bash sudo"
 RDEPENDS_${PN}-zram += "bash"
 RDEPENDS_${PN} += "bash \
 	${PN}-bpf \
@@ -163,7 +163,7 @@ RDEPENDS_${PN} += "bash \
 	${PN}-zram \
 "
 
-RDEPENDS_${PN}_append_aarch64 = " ${PN}-breakpoints"
+RDEPENDS_${PN}_append_aarch64 = " ${PN}-breakpoints ${PN}-ipc"
 RDEPENDS_${PN}_append_x86 = " ${PN}-breakpoints ${PN}-ipc ${PN}-x86"
 RDEPENDS_${PN}_append_x86-64 = " ${PN}-breakpoints ${PN}-ipc ${PN}-x86"
 RDEPENDS_${PN}_append_powerpc = " ${PN}-powerpc"
