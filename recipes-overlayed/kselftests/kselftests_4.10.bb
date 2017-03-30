@@ -20,7 +20,7 @@ S = "${WORKDIR}/linux-${PV}"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-DEPENDS = "libcap libcap-ng popt rsync-native util-linux \
+DEPENDS = "libcap libcap-ng pkgconfig-native popt rsync-native util-linux \
     ${@bb.utils.contains("TARGET_ARCH", "arm", "", "numactl", d)} \
 "
 
@@ -123,13 +123,17 @@ FILES_${PN}-dbg += "${bindir}/kselftests/*/.debug"
 # make[1]: *** [test_verifier] Error 1
 ALLOW_EMPTY_${PN}-bpf = "1"
 
+# FIXME net target builds most of the binaries, but reuseport_bpf_numa depends on libnuma,
+# which is not availbale on ARM, failing entire test case
+ALLOW_EMPTY_${PN}-net = "1"
+
 RDEPENDS_${PN}-cpu-hotplug += "bash"
 RDEPENDS_${PN}-efivarfs += "bash"
 RDEPENDS_${PN}-futex += "bash ncurses"
 RDEPENDS_${PN}-memory-hotplug += "bash"
 RDEPENDS_${PN}-net += "bash"
 RDEPENDS_${PN}-vm += "bash sudo"
-RDEPENDS_${PN}-zram += "bash"
+RDEPENDS_${PN}-zram += "bash bc"
 RDEPENDS_${PN} += "bash \
 	${PN}-bpf \
 	${PN}-capabilities \
