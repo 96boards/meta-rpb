@@ -1,5 +1,9 @@
 DISTRO_VERSION = "2.0+linaro"
 
+# These default to 'oecore' and 'nodistro'
+SDK_NAME_PREFIX = "${DISTRO}"
+SDK_VERSION = "${DISTRO_VERSION}"
+
 TARGET_VENDOR = "-linaro"
 
 require conf/distro/include/arm-defaults.inc
