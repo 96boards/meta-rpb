@@ -34,5 +34,6 @@ RDEPENDS_packagegroup-rpb-tests-console = "\
 
 SUMMARY_packagegroup-rpb-tests-x11 = "Test apps that can be used in X11 Desktop"
 RDEPENDS_packagegroup-rpb-tests-x11 = "\
+    chromium-chromedriver \
     piglit \
     "
