@@ -9,6 +9,10 @@ TARGET_VENDOR = "-linaro"
 require conf/distro/include/arm-defaults.inc
 require conf/distro/include/egl.inc
 
+# defaultsetup.inc gets includes after ${DISTRO}.conf, so we need to set it here
+# to make the python below work. Local, site and auto.conf will override it.
+TCMODE ?= "default"
+
 # Enable multilib conditionally, only for aarch64 with default toolchain combination
 # Other combinations aren't supported
 def get_multilib_handler(d):
