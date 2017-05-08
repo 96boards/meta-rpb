@@ -1,0 +1,31 @@
+From 35c407f24a05664be9276b03fd498eaa3975c148 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Daniel=20D=C3=ADaz?= <daniel.diaz@linaro.org>
+Date: Thu, 4 May 2017 00:57:39 -0500
+Subject: [PATCH] Forget about GBM_BO_MAP.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Signed-off-by: Daniel Díaz <daniel.diaz@linaro.org>
+---
+ CMakeLists.txt | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 983f4a3..8140314 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -141,10 +141,6 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ 	if(GBM_FOUND)
+ 		set(PIGLIT_HAS_GBM True)
+ 		add_definitions(-DPIGLIT_HAS_GBM)
+-		if (GBM_VERSION VERSION_EQUAL "12.1" OR GBM_VERSION VERSION_GREATER "12.1")
+-			set(PIGLIT_HAS_GBM_BO_MAP True)
+-			add_definitions(-DPIGLIT_HAS_GBM_BO_MAP)
+-		endif()
+ 	endif(GBM_FOUND)
+ 
+ 	pkg_check_modules(WAYLAND QUIET wayland-client wayland-egl)
+-- 
+1.9.1
+
