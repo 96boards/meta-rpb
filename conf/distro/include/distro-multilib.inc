@@ -13,3 +13,7 @@ MULTILIBS = "multilib:lib32"
 
 # Merge with conf/distro/inclue/arm-defaults.inc?
 DEFAULTTUNE_virtclass-multilib-lib32 = "armv7ahf-neon"
+
+# Enforce RPM, opkg and dpkg can't parallel install multilib conflicts
+PACKAGE_CLASSES = "package_rpm"
+
