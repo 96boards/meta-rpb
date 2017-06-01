@@ -1,4 +1,4 @@
-DISTRO_VERSION = "2.0+linaro"
+DISTRO_VERSION = "2.3+linaro"
 
 # These default to 'oecore' and 'nodistro'
 SDK_NAME_PREFIX = "${DISTRO}"
