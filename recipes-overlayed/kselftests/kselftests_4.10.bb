@@ -11,6 +11,7 @@ SRC_URI = "\
     file://0001-selftests-gpio-use-pkg-config.patch \
     file://0001-selftests-net-use-LDLIBS-to-link-against-libnuma.patch \
     file://0001-selftests-breakpoints-allow-to-cross-compile-for-aar.patch;apply=no \
+    file://0001-selftests-sync-Skip-the-test-if-kernel-support-is-no.patch \
 "
 
 SRC_URI[md5sum] = "b5e7f6b9b2fe1b6cc7bc56a3a0bfc090"
