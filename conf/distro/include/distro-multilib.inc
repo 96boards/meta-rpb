@@ -3,10 +3,10 @@
 
 # Install 64bit into ${prefix}/lib64 and ${prefix}/lib32
 # FIXME: use debian multi-arch style paths
-BASELIB_aarch64 = "lib"
+#BASELIB_aarch64 = "lib"
 
 BASELIB_tune-armv7ahf-neon = "lib32"
-BASELIB_armv7a = "lib32"
+BASELIB_armv7a = "lib"
 
 require conf/multilib.conf
 MULTILIBS = "multilib:lib32"
