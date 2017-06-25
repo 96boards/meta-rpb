@@ -18,5 +18,8 @@ Signed-off-by: Denys Dmytriyenko <denys@ti.com>
 -CC := $(CROSS_COMPILE)gcc
 +CC ?= $(CROSS_COMPILE)gcc
  
- define RUN_TESTS
- 	@for TEST in $(TEST_PROGS); do \
+ ifeq (0,$(MAKELEVEL))
+ OUTPUT := $(shell pwd)
+-- 
+2.7.4
+

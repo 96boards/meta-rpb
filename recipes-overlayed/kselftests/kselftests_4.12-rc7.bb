@@ -3,25 +3,27 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 SRC_URI = "\
-    https://www.kernel.org/pub/linux/kernel/v4.x/linux-${PV}.tar.xz \
+    https://git.kernel.org/torvalds/t/linux-${PV}.tar.gz \
     file://0001-selftests-lib-allow-to-override-CC-in-the-top-level-Makefile.patch \
     file://0001-selftests-timers-use-LDLIBS-to-link-against-libpthread.patch \
-    file://0001-selftests-sigaltstack-fix-packaging.patch \
     file://0001-selftests-seccomp-use-LDLIBS-to-link-against-libpthread.patch \
     file://0001-selftests-gpio-use-pkg-config.patch \
     file://0001-selftests-net-use-LDLIBS-to-link-against-libnuma.patch \
-    file://0001-selftests-breakpoints-allow-to-cross-compile-for-aar.patch;apply=no \
     file://0001-selftests-sync-Skip-the-test-if-kernel-support-is-no.patch \
+    file://fix-building-of-gpio.patch \
+    file://use-ldlibs-for-proper-linking-of-memfd.patch \
+    file://gpio-drop-extra-files-and-directories.patch \
+    file://fix-installation-for-splice-test.patch \
 "
 
-SRC_URI[md5sum] = "b5e7f6b9b2fe1b6cc7bc56a3a0bfc090"
-SRC_URI[sha256sum] = "3c95d9f049bd085e5c346d2c77f063b8425f191460fcd3ae9fe7e94e0477dc4b"
+SRC_URI[md5sum] = "c676a8ac90aead4fc982b39411815a98"
+SRC_URI[sha256sum] = "7d5c4c3b716fd40401c6b23f1a1007d0887385587cabe8c37eea910536d76eeb"
 
 S = "${WORKDIR}/linux-${PV}"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-DEPENDS = "libcap libcap-ng pkgconfig-native popt rsync-native util-linux \
+DEPENDS = "fuse libcap libcap-ng pkgconfig-native popt rsync-native util-linux \
     ${@bb.utils.contains("TARGET_ARCH", "arm", "", "numactl", d)} \
 "
 
@@ -47,6 +49,7 @@ PACKAGE_BEFORE_PN = " \
 	${PN}-bpf \
 	${PN}-breakpoints \
 	${PN}-capabilities \
+	${PN}-cpufreq \
 	${PN}-cpu-hotplug \
 	${PN}-efivarfs \
 	${PN}-exec \
@@ -70,6 +73,7 @@ PACKAGE_BEFORE_PN = " \
 	${PN}-seccomp \
 	${PN}-sigaltstack \
 	${PN}-size \
+	${PN}-splice \
 	${PN}-static-keys \
 	${PN}-sync \
 	${PN}-sysctl \
@@ -83,6 +87,7 @@ PACKAGE_BEFORE_PN = " \
 FILES_${PN}-bpf = "${bindir}/kselftests/bpf"
 FILES_${PN}-breakpoints = "${bindir}/kselftests/breakpoints"
 FILES_${PN}-capabilities = "${bindir}/kselftests/capabilities"
+FILES_${PN}-cpufreq = "${bindir}/kselftests/cpufreq"
 FILES_${PN}-cpu-hotplug = "${bindir}/kselftests/cpu-hotplug"
 FILES_${PN}-efivarfs = "${bindir}/kselftests/efivarfs"
 FILES_${PN}-exec = "${bindir}/kselftests/exec"
@@ -106,6 +111,7 @@ FILES_${PN}-ptrace = "${bindir}/kselftests/ptrace"
 FILES_${PN}-seccomp = "${bindir}/kselftests/seccomp"
 FILES_${PN}-sigaltstack = "${bindir}/kselftests/sigaltstack"
 FILES_${PN}-size = "${bindir}/kselftests/size"
+FILES_${PN}-splice = "${bindir}/kselftests/splice"
 FILES_${PN}-static-keys = "${bindir}/kselftests/static_keys"
 FILES_${PN}-sync = "${bindir}/kselftests/sync"
 FILES_${PN}-sysctl = "${bindir}/kselftests/sysctl"
@@ -124,20 +130,24 @@ FILES_${PN}-dbg += "${bindir}/kselftests/*/.debug"
 # make[1]: *** [test_verifier] Error 1
 ALLOW_EMPTY_${PN}-bpf = "1"
 
-# FIXME net target builds most of the binaries, but reuseport_bpf_numa depends on libnuma,
-# which is not availbale on ARM, failing entire test case
-ALLOW_EMPTY_${PN}-net = "1"
+# FIXME breakpoints currently fails because of missing
+# symbols from glibc. C.f. this bug:
+#   https://sourceware.org/bugzilla/show_bug.cgi?id=21286
+ALLOW_EMPTY_${PN}-breakpoints = "1"
 
+RDEPENDS_${PN}-cpufreq += "bash"
 RDEPENDS_${PN}-cpu-hotplug += "bash"
 RDEPENDS_${PN}-efivarfs += "bash"
 RDEPENDS_${PN}-futex += "bash ncurses"
+RDEPENDS_${PN}-gpio += "bash"
 RDEPENDS_${PN}-memory-hotplug += "bash"
-RDEPENDS_${PN}-net += "bash"
+RDEPENDS_${PN}-net += "bash iproute2"
 RDEPENDS_${PN}-vm += "bash sudo"
 RDEPENDS_${PN}-zram += "bash bc"
 RDEPENDS_${PN} += "bash \
 	${PN}-bpf \
 	${PN}-capabilities \
+	${PN}-cpufreq \
 	${PN}-cpu-hotplug \
 	${PN}-efivarfs \
 	${PN}-exec \
@@ -159,6 +169,7 @@ RDEPENDS_${PN} += "bash \
 	${PN}-seccomp \
 	${PN}-sigaltstack \
 	${PN}-size \
+	${PN}-splice \
 	${PN}-static-keys \
 	${PN}-sync \
 	${PN}-sysctl \

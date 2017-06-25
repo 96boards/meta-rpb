@@ -1,0 +1,45 @@
+From 24a1e71c481aee27901f0a8a98a4e7aa72f4932b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Daniel=20D=C3=ADaz?= <daniel.diaz@linaro.org>
+Date: Fri, 23 Jun 2017 16:22:02 -0500
+Subject: [PATCH] selftests: gpio: Drop extra files and directories
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+No need to clean up after those objects since they don't
+exist anymore.
+
+Signed-off-by: Daniel Díaz <daniel.diaz@linaro.org>
+---
+ tools/testing/selftests/gpio/Makefile | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
+
+diff --git a/tools/testing/selftests/gpio/Makefile b/tools/testing/selftests/gpio/Makefile
+index 106dada8..11ce5ff 100644
+--- a/tools/testing/selftests/gpio/Makefile
++++ b/tools/testing/selftests/gpio/Makefile
+@@ -6,11 +6,6 @@ LDLIBS += $(shell pkg-config --libs mount)
+ TEST_PROGS := gpio-mockup.sh
+ TEST_FILES := gpio-mockup-sysfs.sh
+ TEST_PROGS_EXTENDED := gpio-mockup-chardev
+-EXTRA_PROGS := ../gpiogpio-event-mon ../gpiogpio-hammer ../gpiolsgpio
+-EXTRA_DIRS := ../gpioinclude/
+-EXTRA_OBJS := ../gpiogpio-event-mon-in.o ../gpiogpio-event-mon.o
+-EXTRA_OBJS += ../gpiogpio-hammer-in.o ../gpiogpio-utils.o ../gpiolsgpio-in.o
+-EXTRA_OBJS += ../gpiolsgpio.o
+ 
+ GPIODIR := $(realpath ../../../gpio)
+ GPIOOBJ := gpio-utils.o
+@@ -19,8 +14,7 @@ GPIOINC := gpio.h
+ all: $(GPIOINC) $(TEST_PROGS_EXTENDED)
+ 
+ override define CLEAN
+-	$(RM) $(TEST_PROGS_EXTENDED) $(EXTRA_PROGS) $(EXTRA_OBJS)
+-	$(RM) -r $(EXTRA_DIRS)
++	$(RM) $(TEST_PROGS_EXTENDED)
+ 	$(MAKE) -C $(GPIODIR) clean
+ endef
+ 
+-- 
+2.7.4
+
