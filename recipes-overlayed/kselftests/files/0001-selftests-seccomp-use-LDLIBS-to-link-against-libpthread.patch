@@ -14,10 +14,10 @@ Signed-off-by: Fathi Boudra <fathi.boudra@linaro.org>
 --- a/tools/testing/selftests/seccomp/Makefile
 +++ b/tools/testing/selftests/seccomp/Makefile
 @@ -1,6 +1,6 @@
- TEST_PROGS := seccomp_bpf
+ TEST_GEN_PROGS := seccomp_bpf
  CFLAGS += -Wl,-no-as-needed -Wall
 -LDFLAGS += -lpthread
 +LDLIBS += -lpthread
  
- all: $(TEST_PROGS)
+ include ../lib.mk
  

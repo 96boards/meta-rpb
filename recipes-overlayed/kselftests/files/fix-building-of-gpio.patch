@@ -1,0 +1,58 @@
+From 34ba455fc5131413004ea34a33fbb59759256588 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Daniel=20D=C3=ADaz?= <daniel.diaz@linaro.org>
+Date: Fri, 23 Jun 2017 15:22:17 -0500
+Subject: [PATCH] selftests: Fix building of gpio.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+When simply running `make' from the selftests top dir, this
+error shows up:
+
+  cc -O2 -g -std=gnu99 -Wall -I../../../../usr/include/ -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/uuid    gpio-mockup-chardev.c ../../../gpio/gpio-utils.o  -lmount -o gpio-mockup-chardev
+  cc: error: ../../../gpio/gpio-utils.o: No such file or directory
+  <builtin>: recipe for target 'gpio-mockup-chardev' failed
+  make[1]: *** [gpio-mockup-chardev] Error 1
+
+because the output directory is set to "selftests/gpio" and
+all binaries built from ../../../gpio/ end up there. In fact,
+they appear as, exempli gratia:
+* gpiogpio-event-mon
+* gpiogpio-hammer
+* gpioinclude/
+* gpiolsgpio
+which is wrong, as it's missing directory separator somewhere.
+
+This patch sets straight the output directory when building
+../../../gpio/ so that binaries don't cross paths.
+
+Signed-off-by: Daniel Díaz <daniel.diaz@linaro.org>
+---
+ tools/testing/selftests/gpio/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/tools/testing/selftests/gpio/Makefile b/tools/testing/selftests/gpio/Makefile
+index 951bd76..96b1bbf 100644
+--- a/tools/testing/selftests/gpio/Makefile
++++ b/tools/testing/selftests/gpio/Makefile
+@@ -12,7 +12,7 @@ EXTRA_OBJS := ../gpiogpio-event-mon-in.o ../gpiogpio-event-mon.o
+ EXTRA_OBJS += ../gpiogpio-hammer-in.o ../gpiogpio-utils.o ../gpiolsgpio-in.o
+ EXTRA_OBJS += ../gpiolsgpio.o
+ 
+-GPIODIR := ../../../gpio
++GPIODIR := $(realpath ../../../gpio)
+ GPIOOBJ := gpio-utils.o
+ GPIOINC := gpio.h
+ 
+@@ -32,7 +32,7 @@ include ../lib.mk
+ $(TEST_PROGS_EXTENDED): $(GPIODIR)/$(GPIOOBJ)
+ 
+ $(GPIODIR)/$(GPIOOBJ):
+-	$(MAKE) -C $(GPIODIR)
++	$(MAKE) OUTPUT=$(GPIODIR)/ -C $(GPIODIR)
+ 
+ $(GPIOINC):
+ 	$(MAKE) -C ../../../.. headers_install
+-- 
+2.7.4
+

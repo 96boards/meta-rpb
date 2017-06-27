@@ -1,3 +1,6 @@
+From 18288e485a89d832e2a6a9ec53c4b4f3ec178888 Mon Sep 17 00:00:00 2001
+From: Fathi Boudra <fathi.boudra@linaro.org>
+Date: Sun, 25 Jun 2017 09:47:35 -0500
 Subject: [PATCH] selftests: net: use LDLIBS to link against libnuma
 
 Use the same fixup as used for timers test:
@@ -5,20 +8,22 @@ use LDLIBS to properly link against libnuma.
 
 Signed-off-by: Fathi Boudra <fathi.boudra@linaro.org>
 ---
- tools/testing/selftests/net/Makefile |    4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ tools/testing/selftests/net/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
+diff --git a/tools/testing/selftests/net/Makefile b/tools/testing/selftests/net/Makefile
+index fbfe5d0..4d45fce 100644
 --- a/tools/testing/selftests/net/Makefile
 +++ b/tools/testing/selftests/net/Makefile
-@@ -9,9 +9,9 @@ NET_PROGS += reuseport_bpf reuseport_bpf
- NET_PROGS += reuseport_dualstack
+@@ -3,7 +3,7 @@
+ CFLAGS =  -Wall -Wl,--no-as-needed -O2 -g
+ CFLAGS += -I../../../../usr/include/
  
- all: $(NET_PROGS)
 -reuseport_bpf_numa: LDFLAGS += -lnuma
-+reuseport_bpf_numa: LDLIBS += -lnuma
- %: %.c
--	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
-+	$(CC) $(CFLAGS) $(LDLIBS) -o $@ $^
++LDLIBS += -lnuma
  
- TEST_PROGS := run_netsocktests run_afpackettests test_bpf.sh
- TEST_FILES := $(NET_PROGS)
+ TEST_PROGS := run_netsocktests run_afpackettests test_bpf.sh netdevice.sh
+ TEST_GEN_FILES =  socket
+-- 
+2.7.4
+

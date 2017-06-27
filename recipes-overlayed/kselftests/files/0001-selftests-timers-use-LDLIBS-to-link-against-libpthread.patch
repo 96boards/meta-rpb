@@ -12,12 +12,14 @@ Signed-off-by: Denys Dmytriyenko <denys@ti.com>
 
 --- a/tools/testing/selftests/timers/Makefile
 +++ b/tools/testing/selftests/timers/Makefile
-@@ -1,7 +1,7 @@
- CC = $(CROSS_COMPILE)gcc
+@@ -1,6 +1,6 @@
  BUILD_FLAGS = -DKTEST
  CFLAGS += -O3 -Wl,-no-as-needed -Wall $(BUILD_FLAGS)
 -LDFLAGS += -lrt -lpthread
 +LDLIBS += -lrt -lpthread
  
  # these are all "safe" tests that don't modify
- # system time or require escalated privledges
+ # system time or require escalated privileges
+-- 
+2.7.4
+
