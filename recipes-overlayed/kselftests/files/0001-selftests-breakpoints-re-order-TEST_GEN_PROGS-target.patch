@@ -1,0 +1,53 @@
+From 7c1a2d46adb6685192a3909643473fb907ece6bc Mon Sep 17 00:00:00 2001
+From: Fathi Boudra <fathi.boudra@linaro.org>
+Date: Thu, 29 Jun 2017 11:51:00 +0300
+Subject: [PATCH] selftests: breakpoints: re-order TEST_GEN_PROGS targets
+
+breakpoint_test can fail on arm64 with older/unpatched glibc:
+
+ breakpoint_test_arm64.c: In function 'run_test':
+ breakpoint_test_arm64.c:170:25: error: 'TRAP_HWBKPT' undeclared (first use
+ in this function)
+
+due to glibc missing several of the TRAP_* constants in the userspace
+definitions. Specifically TRAP_BRANCH and TRAP_HWBKPT.
+See https://sourceware.org/bugzilla/show_bug.cgi?id=21286
+
+It prevents to build step_after_suspend_test afterward, since make won't
+continue.
+
+We still want to be able to build and run the test, independently of
+breakpoint_test_arm64 build failure. Re-order TEST_GEN_PROGS to be able to
+build step_after_suspend_test first.
+
+Signed-off-by: Fathi Boudra <fathi.boudra@linaro.org>
+---
+ tools/testing/selftests/breakpoints/Makefile | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/tools/testing/selftests/breakpoints/Makefile b/tools/testing/selftests/breakpoints/Makefile
+index 6b214b7b10fb..247b0a1899d7 100644
+--- a/tools/testing/selftests/breakpoints/Makefile
++++ b/tools/testing/selftests/breakpoints/Makefile
+@@ -2,14 +2,14 @@
+ uname_M := $(shell uname -m 2>/dev/null || echo not)
+ ARCH ?= $(shell echo $(uname_M) | sed -e s/i.86/x86/ -e s/x86_64/x86/)
+ 
++TEST_GEN_PROGS := step_after_suspend_test
++
+ ifeq ($(ARCH),x86)
+-TEST_GEN_PROGS := breakpoint_test
++TEST_GEN_PROGS += breakpoint_test
+ endif
+ ifneq (,$(filter $(ARCH),aarch64 arm64))
+-TEST_GEN_PROGS := breakpoint_test_arm64
++TEST_GEN_PROGS += breakpoint_test_arm64
+ endif
+ 
+-TEST_GEN_PROGS += step_after_suspend_test
+-
+ include ../lib.mk
+ 
+-- 
+2.13.0
+
