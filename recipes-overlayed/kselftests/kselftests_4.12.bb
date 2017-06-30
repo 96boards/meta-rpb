@@ -51,6 +51,7 @@ SRC_URI += "\
     file://0039-selftests-add-missing-test-name-in-memory-hotplug-te.patch \
     file://0040-selftests-fix-memory-hotplug-test.patch \
     file://0041-selftests-intel_pstate-add-.gitignore.patch \
+    file://0042-selftests-capabilities-Fix-the-test_execve-test.patch \
 "
 
 # Patches inappropriate or not yet merged by upstream
