@@ -2,10 +2,7 @@ SUMMARY = "Linux Kernel Selftests"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
-BASEPV = "4.12"
-PV = "${BASEPV}-rc7"
-
-SRC_URI = "https://git.kernel.org/torvalds/t/linux-${PV}.tar.gz"
+SRC_URI = "https://www.kernel.org/pub/linux/kernel/v4.x/linux-${PV}.tar.xz"
 
 # Patches from upstream linux-kselftest repository, queued in next branch
 # https://git.kernel.org/pub/scm/linux/kernel/git/shuah/linux-kselftest.git/log/?h=next
