@@ -16,6 +16,7 @@ RDEPENDS_packagegroup-rpb = "\
     kernel-modules \
     networkmanager \
     networkmanager-nmtui \
+    openssh-sftp-server \
     ${@bb.utils.contains("MACHINE_FEATURES", "optee", "optee-test optee-client", "", d)} \
     rsync \
     sshfs-fuse \
