@@ -100,11 +100,9 @@ libpthread.
 
 Signed-off-by: Fathi Boudra <fathi.boudra@linaro.org>
 ---
- tools/testing/selftests/seccomp/Makefile | 4 ++--
+ tools/testing/selftests/seccomp/Makefile |    4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/tools/testing/selftests/seccomp/Makefile b/tools/testing/selftests/seccomp/Makefile
-index aeb0c805f3ca..7c0afc3c8aef 100644
 --- a/tools/testing/selftests/seccomp/Makefile
 +++ b/tools/testing/selftests/seccomp/Makefile
 @@ -1,8 +1,8 @@
@@ -118,6 +116,3 @@ index aeb0c805f3ca..7c0afc3c8aef 100644
  $(TEST_GEN_PROGS): seccomp_bpf.c ../kselftest_harness.h
 -	$(CC) $(CFLAGS) $(LDFLAGS) $< -o $@
 +	$(CC) $(CFLAGS) $(LDFLAGS) $< $(LDLIBS) -o $@
--- 
-2.13.0
-

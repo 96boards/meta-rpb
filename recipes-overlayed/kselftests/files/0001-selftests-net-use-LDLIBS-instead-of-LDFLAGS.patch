@@ -56,11 +56,9 @@ libnuma.
 
 Signed-off-by: Fathi Boudra <fathi.boudra@linaro.org>
 ---
- tools/testing/selftests/net/Makefile | 2 +-
+ tools/testing/selftests/net/Makefile |    2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/tools/testing/selftests/net/Makefile b/tools/testing/selftests/net/Makefile
-index f6c9dbf478f8..7236427d083e 100644
 --- a/tools/testing/selftests/net/Makefile
 +++ b/tools/testing/selftests/net/Makefile
 @@ -11,4 +11,4 @@ TEST_GEN_FILES += reuseport_dualstack
@@ -69,6 +67,3 @@ index f6c9dbf478f8..7236427d083e 100644
  
 -$(OUTPUT)/reuseport_bpf_numa: LDFLAGS += -lnuma
 +$(OUTPUT)/reuseport_bpf_numa: LDLIBS += -lnuma
--- 
-2.13.0
-

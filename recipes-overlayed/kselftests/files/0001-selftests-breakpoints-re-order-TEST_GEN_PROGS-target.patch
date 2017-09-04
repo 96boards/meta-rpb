@@ -22,11 +22,9 @@ build step_after_suspend_test first.
 
 Signed-off-by: Fathi Boudra <fathi.boudra@linaro.org>
 ---
- tools/testing/selftests/breakpoints/Makefile | 8 ++++----
+ tools/testing/selftests/breakpoints/Makefile |    8 ++++----
  1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/tools/testing/selftests/breakpoints/Makefile b/tools/testing/selftests/breakpoints/Makefile
-index 6b214b7b10fb..247b0a1899d7 100644
 --- a/tools/testing/selftests/breakpoints/Makefile
 +++ b/tools/testing/selftests/breakpoints/Makefile
 @@ -2,14 +2,14 @@
@@ -48,6 +46,3 @@ index 6b214b7b10fb..247b0a1899d7 100644
 -
  include ../lib.mk
  
--- 
-2.13.0
-

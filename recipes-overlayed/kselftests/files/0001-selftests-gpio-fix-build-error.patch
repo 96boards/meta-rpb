@@ -48,14 +48,12 @@ Fixes: a8ba798bc8ec ('selftests: enable O and KBUILD_OUTPUT')
 
 Signed-off-by: Marcin Nowakowski <marcin.nowakowski@imgtec.com>
 ---
- tools/testing/selftests/gpio/Makefile | 2 +-
+ tools/testing/selftests/gpio/Makefile |    2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/tools/testing/selftests/gpio/Makefile b/tools/testing/selftests/gpio/Makefile
-index 298929d..950956e 100644
 --- a/tools/testing/selftests/gpio/Makefile
 +++ b/tools/testing/selftests/gpio/Makefile
-@@ -23,7 +23,7 @@ LDLIBS += -lmount -I/usr/include/libmount
+@@ -23,7 +23,7 @@ LDLIBS += -lmount -I/usr/include/libmoun
  $(BINARIES): ../../../gpio/gpio-utils.o ../../../../usr/include/linux/gpio.h
  
  ../../../gpio/gpio-utils.o:

@@ -13,11 +13,9 @@ or link to libmount library.
 
 Signed-off-by: Fathi Boudra <fathi.boudra@linaro.org>
 ---
- tools/testing/selftests/gpio/Makefile | 4 ++--
+ tools/testing/selftests/gpio/Makefile |    4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/tools/testing/selftests/gpio/Makefile b/tools/testing/selftests/gpio/Makefile
-index 298929df97e6..11eed0cdec2a 100644
 --- a/tools/testing/selftests/gpio/Makefile
 +++ b/tools/testing/selftests/gpio/Makefile
 @@ -17,8 +17,8 @@ override define CLEAN
@@ -31,6 +29,3 @@ index 298929df97e6..11eed0cdec2a 100644
  
  $(BINARIES): ../../../gpio/gpio-utils.o ../../../../usr/include/linux/gpio.h
  
--- 
-2.13.0
-

@@ -10,8 +10,8 @@ SRC_URI += "\
     file://0001-selftests-breakpoints-re-order-TEST_GEN_PROGS-target.patch \
     file://0001-selftests-gpio-fix-build-error.patch \
     file://0001-selftests-gpio-use-pkg-config-to-determine-libmount-.patch \
-    file://0001-selftests-net-use-LDLIBS-instead-of-LDFLAGS.patch;apply=no \
-    file://0002-selftests-seccomp-use-LDLIBS-instead-of-LDFLAGS.patch;apply=no \
+    file://0001-selftests-net-use-LDLIBS-instead-of-LDFLAGS.patch \
+    file://0002-selftests-seccomp-use-LDLIBS-instead-of-LDFLAGS.patch \
     file://0003-selftests-timers-use-LDLIBS-instead-of-LDFLAGS.patch \
     file://0001-selftests-splice-fix-installation-for-splice-test.patch \
 "

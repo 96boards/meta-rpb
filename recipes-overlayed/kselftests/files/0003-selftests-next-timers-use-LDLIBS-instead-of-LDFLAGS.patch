@@ -59,9 +59,8 @@ Signed-off-by: Fathi Boudra <fathi.boudra@linaro.org>
 
 --- a/tools/testing/selftests/timers/Makefile
 +++ b/tools/testing/selftests/timers/Makefile
-@@ -1,6 +1,6 @@
- BUILD_FLAGS = -DKTEST
- CFLAGS += -O3 -Wl,-no-as-needed -Wall $(BUILD_FLAGS)
+@@ -1,5 +1,5 @@
+ CFLAGS += -O3 -Wl,-no-as-needed -Wall
 -LDFLAGS += -lrt -lpthread -lm
 +LDLIBS += -lrt -lpthread -lm
  
