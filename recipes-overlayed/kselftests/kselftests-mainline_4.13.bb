@@ -16,8 +16,8 @@ SRC_URI += "\
     file://0001-selftests-splice-fix-installation-for-splice-test.patch \
 "
 
-SRC_URI[md5sum] = "fc454157e2d024d401a60905d6481c6b"
-SRC_URI[sha256sum] = "a45c3becd4d08ce411c14628a949d08e2433d8cdeca92036c7013980e93858ab"
+SRC_URI[md5sum] = "ab1a2abc6f37b752dd2595338bec4e78"
+SRC_URI[sha256sum] = "2db3d6066c3ad93eb25b973a3d2951e022a7e975ee2fa7cbe5bddf84d9a49a2c"
 
 S = "${WORKDIR}/linux-${PV}"
 
