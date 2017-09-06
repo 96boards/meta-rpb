@@ -55,6 +55,10 @@ python write_srcuri() {
         with open(os.path.join(pkghistdir, 'srcuri'), 'w') as f:
             f.write('%s' % srcuri)
         pn = d.getVar('PN', True).upper().replace('-', '_')
-        with open(os.path.join(pkghistdir, 'srcuri0'), 'w') as f:
-            f.write('%s_URL=%s' % (pn, srcuri.splitlines()[0].split(';')[0]))
+        pv = d.getVar('PV', True)
+        srcrev = d.getVar('SRCREV', True)
+        with open(os.path.join(pkghistdir, 'metadata'), 'w') as f:
+            f.write('%s_URL=%s\n' % (pn, srcuri.splitlines()[0].split(';')[0]))
+            f.write('%s_VERSION=%s\n' % (pn, pv))
+            f.write('%s_REVISION=%s\n' % (pn, srcrev))
 }
