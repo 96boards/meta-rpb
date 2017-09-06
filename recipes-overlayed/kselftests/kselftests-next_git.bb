@@ -2,9 +2,9 @@ SUMMARY = "Linux Kernel Selftests (linux-kselftest next)"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 PV = "4.13+git${SRCPV}"
-SRCREV = "369130b63178e0e2f863a2da2a5ad0238ded6d9d"
+SRCREV = "e9fcbcd00963a2ef9ec7e9ffd892c5a45dc27729"
 
-SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/shuah/linux-kselftest.git;protocol=https;branch=next;name=kernel"
+SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git;protocol=https;branch=master;name=kernel"
 # Patches inappropriate or not yet merged by upstream
 # Some patches may have been submitted to upstream
 SRC_URI += "\
