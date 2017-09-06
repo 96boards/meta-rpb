@@ -44,17 +44,17 @@ do_fetch[vardepsexclude] += "write_srcuri"
 python write_srcuri() {
     import re
     pkghistdir = d.getVar('LKFTMETADATA_DIR_PACKAGE', True)
-    srcurifile = os.path.join(pkghistdir, 'srcuri')
-
-    srcuri = re.sub('\s+', ' ', d.getVar('SRC_URI', True)).replace(' ', '\n') 
-
     if not os.path.exists(pkghistdir):
         bb.utils.mkdirhier(pkghistdir)
 
+    srcuri = re.sub('\s+', ' ', d.getVar('SRC_URI', True)).replace(' ', '\n')
+    # Filter out empty lines
+    srcuri = os.linesep.join([s for s in srcuri.splitlines() if s])
+
     if srcuri:
-        with open(srcurifile, 'w') as f:
+        with open(os.path.join(pkghistdir, 'srcuri'), 'w') as f:
             f.write('%s' % srcuri)
-    else:
-        with open(srcurifile, 'w') as f:
-            f.write('SRC_URI not found"\n')
+        pn = d.getVar('PN', True).upper().replace('-', '_')
+        with open(os.path.join(pkghistdir, 'srcuri0'), 'w') as f:
+            f.write('%s_URL=%s' % (pn, srcuri.splitlines()[0].split(';')[0]))
 }
