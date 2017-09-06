@@ -13,7 +13,7 @@ SRC_URI += "\
     file://0001-selftests-gpio-fix-build-error.patch \
     file://0001-selftests-gpio-use-pkg-config-to-determine-libmount-.patch \
     file://0001-selftests-net-use-LDLIBS-instead-of-LDFLAGS.patch \
-    file://0002-selftests-seccomp-use-LDLIBS-instead-of-LDFLAGS.patch \
+    file://0002-selftests-next-seccomp-use-LDLIBS-instead-of-LDFLAGS.patch \
     file://0003-selftests-next-timers-use-LDLIBS-instead-of-LDFLAGS.patch \
 "
 
