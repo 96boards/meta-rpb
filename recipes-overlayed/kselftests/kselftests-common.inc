@@ -7,7 +7,7 @@ DEPENDS = "fuse libcap libcap-ng pkgconfig-native popt rsync-native util-linux \
 
 inherit kernel-arch
 
-KSELFTESTS_ARGS = "-C ${S}/tools/testing/selftests INSTALL_PATH=${D}${INSTALL_PATH} CC="${CC}" LD="${LD}" ARCH=${ARCH}"
+KSELFTESTS_ARGS = "-i -C ${S}/tools/testing/selftests INSTALL_PATH=${D}${INSTALL_PATH} CC="${CC}" LD="${LD}" ARCH=${ARCH}"
 
 do_compile() {
     # Make sure to install the user space API used by some tests
