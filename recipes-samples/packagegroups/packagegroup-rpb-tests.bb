@@ -7,7 +7,6 @@ PACKAGES = "\
     packagegroup-rpb-tests \
     packagegroup-rpb-tests-console \
     packagegroup-rpb-tests-python \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'packagegroup-rpb-tests-x11', '', d)} \
     "
 
 # contains basic dependencies, that don't need graphics/display
@@ -32,10 +31,4 @@ SUMMARY_packagegroup-rpb-tests-console = "Test apps that can be used in console 
 RDEPENDS_packagegroup-rpb-tests-console = "\
     alsa-utils-speakertest \
     ltp \
-    "
-
-SUMMARY_packagegroup-rpb-tests-x11 = "Test apps that can be used in X11 Desktop"
-RDEPENDS_packagegroup-rpb-tests-x11 = "\
-    chromium-chromedriver \
-    piglit \
     "
