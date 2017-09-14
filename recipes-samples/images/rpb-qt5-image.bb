@@ -1,13 +1,9 @@
+require rpb-console-image.bb
+
 SUMMARY = "Basic QT5 image"
 
-IMAGE_FEATURES += " package-management debug-tweaks ssh-server-openssh hwcodecs tools-debug"
-
-LICENSE = "MIT"
-
-inherit core-image distro_features_check extrausers
-
 # let's make sure we have a good image..
-REQUIRED_DISTRO_FEATURES = "pam systemd opengl"
+REQUIRED_DISTRO_FEATURES += "opengl"
 
 # by default and without x11-base in IMAGE_FEATURES we default to multi-user.target
 SYSTEMD_DEFAULT_TARGET = "multi-user.target"
@@ -33,8 +29,4 @@ CORE_IMAGE_BASE_INSTALL += " \
 	qt5everywheredemo \
 	qtbase-examples \
 	${@bb.utils.contains("MACHINE_FEATURES", "optee", "optee-test optee-client", "", d)} \
-"
-
-EXTRA_USERS_PARAMS = "\
-useradd -p '' linaro; \
 "
