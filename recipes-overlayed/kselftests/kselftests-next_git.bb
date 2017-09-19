@@ -9,7 +9,6 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git;pro
 # Some patches may have been submitted to upstream
 SRC_URI += "\
     file://0001-selftests-lib-allow-to-override-CC-in-the-top-level-Makefile.patch \
-    file://0001-selftests-breakpoints-re-order-TEST_GEN_PROGS-target.patch \
     file://0001-selftests-gpio-fix-build-error.patch \
     file://0001-selftests-gpio-use-pkg-config-to-determine-libmount-.patch \
     file://0001-selftests-net-use-LDLIBS-instead-of-LDFLAGS.patch \
