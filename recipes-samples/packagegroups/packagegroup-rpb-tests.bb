@@ -32,4 +32,5 @@ RDEPENDS_packagegroup-rpb-tests-console = "\
     alsa-utils-speakertest \
     ltp \
     stress-ng \
+    ptest-runner \
     "
