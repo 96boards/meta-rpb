@@ -8,6 +8,7 @@ RDEPENDS_packagegroup-rpb-weston = "\
     chromium-wayland \
     chromium-wayland-chromedriver \
     clutter-1.0-examples \
+    ffmpeg \
     gps-utils \
     gpsd \
     gstreamer1.0-plugins-bad-meta \
