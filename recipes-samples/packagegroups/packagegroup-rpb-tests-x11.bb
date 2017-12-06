@@ -9,4 +9,6 @@ PACKAGES = "\
 RDEPENDS_packagegroup-rpb-tests-x11 = "\
     chromium-chromedriver \
     piglit \
+    gst-validate \
+    xserver-xorg-xvfb \
     "
