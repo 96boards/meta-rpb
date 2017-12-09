@@ -54,14 +54,14 @@ libpthread.
 Signed-off-by: Denys Dmytriyenko <denys@ti.com>
 Signed-off-by: Fathi Boudra <fathi.boudra@linaro.org>
 ---
- tools/testing/selftests/timers/Makefile |    2 +-
+ tools/testing/selftests/timers/Makefile | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 --- a/tools/testing/selftests/timers/Makefile
 +++ b/tools/testing/selftests/timers/Makefile
 @@ -1,6 +1,6 @@
- BUILD_FLAGS = -DKTEST
- CFLAGS += -O3 -Wl,-no-as-needed -Wall $(BUILD_FLAGS)
+ # SPDX-License-Identifier: GPL-2.0
+ CFLAGS += -O3 -Wl,-no-as-needed -Wall
 -LDFLAGS += -lrt -lpthread -lm
 +LDLIBS += -lrt -lpthread -lm
  

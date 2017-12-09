@@ -100,19 +100,17 @@ libpthread.
 
 Signed-off-by: Fathi Boudra <fathi.boudra@linaro.org>
 ---
- tools/testing/selftests/seccomp/Makefile |    4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ tools/testing/selftests/seccomp/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 --- a/tools/testing/selftests/seccomp/Makefile
 +++ b/tools/testing/selftests/seccomp/Makefile
-@@ -1,8 +1,8 @@
- TEST_GEN_PROGS := seccomp_bpf
+@@ -9,7 +9,7 @@ BINARIES := seccomp_bpf seccomp_benchmark
  CFLAGS += -Wl,-no-as-needed -Wall
--LDFLAGS += -lpthread
-+LDLIBS += -lpthread
  
- include ../lib.mk
+ seccomp_bpf: seccomp_bpf.c ../kselftest_harness.h
+-	$(CC) $(CFLAGS) $(LDFLAGS) -lpthread $< -o $@
++	$(CC) $(CFLAGS) $(LDFLAGS) $< -lpthread -o $@
  
- $(TEST_GEN_PROGS): seccomp_bpf.c ../kselftest_harness.h
--	$(CC) $(CFLAGS) $(LDFLAGS) $< -o $@
-+	$(CC) $(CFLAGS) $(LDFLAGS) $< $(LDLIBS) -o $@
+ TEST_PROGS += $(BINARIES)
+ EXTRA_CLEAN := $(BINARIES)
