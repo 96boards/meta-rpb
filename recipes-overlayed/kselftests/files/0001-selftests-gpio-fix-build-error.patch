@@ -1,0 +1,64 @@
+From patchwork Fri Jun 23 10:37:25 2017
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: [2/3] selftests/gpio: fix build error
+From: Marcin Nowakowski <marcin.nowakowski@imgtec.com>
+X-Patchwork-Id: 9806225
+Message-Id: <1498214246-1244-3-git-send-email-marcin.nowakowski@imgtec.com>
+To: Shuah Khan <shuah@kernel.org>
+Cc: <linux-kselftest@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ Marcin Nowakowski <marcin.nowakowski@imgtec.com>
+Date: Fri, 23 Jun 2017 12:37:25 +0200
+
+While building selftests/gpio, gpio-utils from linux/tools/gpio as built
+in the process as well. However, the OUTPUT make variable usage in
+selftests breaks the build system in linux/tools/gpio resulting in its
+output files placed in the selftests folder (due to lack of trailing
+slash in the path, the files are placed directly in selftests):
+
+make -f linux/tools/build/Makefile.build dir=. obj=lsgpio
+make[3]: Entering directory '/mnt/ssd/MIPS/linux-next/tools/gpio'
+CC    linux/tools/testing/selftests/gpiolsgpio.o
+CC    linux/tools/testing/selftests/gpiogpio-utils.o
+LD    linux/tools/testing/selftests/gpiolsgpio-in.o
+
+This pollutes the selftests directory and, most importantly, makes it
+impossible for selftests/gpio to find the object file it's looking for
+to link the test:
+
+cc -O2 -g -std=gnu99 -Wall -I../../../../usr/include/
+gpio-mockup-chardev.c ../../../gpio/gpio-utils.o
+../../../../usr/include/linux/gpio.h  -lmount -I/usr/include/libmount -o
+gpio-mockup-chardev
+gcc: error: ../../../gpio/gpio-utils.o: No such file or directory
+
+Fix this by clearing the OUTPUT variable when invoking linux/tools/gpio
+make to ensure it's built where expected.
+
+Note, that this solution is not ideal as the output is placed in
+linux/tools/gpio rather than a location relative to OUTPUT, but this at
+least ensures the build succeeds.
+Due to differences and complexities of selftests and linux/tools build
+systems, it's not trivial to ensure linux/tools get built properly when
+invoked recursively from selftests build and this is left as a future
+task to resolve properly.
+
+Fixes: a8ba798bc8ec ('selftests: enable O and KBUILD_OUTPUT')
+
+Signed-off-by: Marcin Nowakowski <marcin.nowakowski@imgtec.com>
+---
+ tools/testing/selftests/gpio/Makefile |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- a/tools/testing/selftests/gpio/Makefile
++++ b/tools/testing/selftests/gpio/Makefile
+@@ -23,7 +23,7 @@ LDLIBS += -lmount -I/usr/include/libmoun
+ $(BINARIES): ../../../gpio/gpio-utils.o ../../../../usr/include/linux/gpio.h
+ 
+ ../../../gpio/gpio-utils.o:
+-	make ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C ../../../gpio
++	make ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C ../../../gpio OUTPUT=
+ 
+ ../../../../usr/include/linux/gpio.h:
+ 	make -C ../../../.. headers_install INSTALL_HDR_PATH=$(shell pwd)/../../../../usr/

@@ -1,0 +1,30 @@
+From 5cc3027f002fafee33137b0a44f8dee23aa1c7a4 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Daniel=20D=C3=ADaz?= <daniel.diaz@linaro.org>
+Date: Fri, 7 Jul 2017 11:01:52 -0500
+Subject: [PATCH] selftests: Fix installation for splice test
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Simplify the Makefile rules so that the test is
+automatically installed (and cleaned) by leveraging
+the TEST_GEN_PROGS_EXTENDED definition.
+
+Reported-by: Naresh Kamboju <naresh.kamboju@linaro.org>
+Signed-off-by: Daniel Díaz <daniel.diaz@linaro.org>
+Signed-off-by: Shuah Khan <shuahkh@osg.samsung.com>
+---
+ tools/testing/selftests/splice/Makefile |    5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+--- a/tools/testing/selftests/splice/Makefile
++++ b/tools/testing/selftests/splice/Makefile
+@@ -1,7 +1,4 @@
+ TEST_PROGS := default_file_splice_read.sh
+-EXTRA := default_file_splice_read
+-all: $(TEST_PROGS) $(EXTRA)
++TEST_GEN_PROGS_EXTENDED := default_file_splice_read
+ 
+ include ../lib.mk
+-
+-EXTRA_CLEAN := $(EXTRA)
