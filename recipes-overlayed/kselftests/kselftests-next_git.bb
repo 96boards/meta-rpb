@@ -14,6 +14,7 @@ SRC_URI += "\
     file://0001-selftests-net-use-LDLIBS-instead-of-LDFLAGS.patch \
     file://0002-selftests-next-seccomp-use-LDLIBS-instead-of-LDFLAGS.patch \
     file://0003-selftests-next-timers-use-LDLIBS-instead-of-LDFLAGS.patch \
+    file://0001-selftests-bpf-Adding-config-fragment-CONFIG_CGROUP_B.patch \
 "
 
 S = "${WORKDIR}/git"
