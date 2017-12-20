@@ -889,6 +889,21 @@ def package_qa_check_rdepends(pkg, pkgdest, skip, taskdeps, packages, d):
 
                     # For Saving the FILERPROVIDES, RPROVIDES and FILES_INFO
                     rdep_data = oe.packagedata.read_subpkgdata(rdep, d)
+
+                    # RPROVIDED?
+                    if not rdep_data:
+                        pkgdata_dir = d.getVar("PKGDATA_DIR")
+                        try:
+                            possibles = os.listdir("%s/runtime-rprovides/%s/" % (pkgdata_dir, rdep))
+                        except OSError:
+                            possibles = []
+                        realpkg = None
+                        for p in possibles:
+                            if p in taskdeps:
+                                realpkg = p
+                                break
+                        rdep_data = oe.packagedata.read_subpkgdata(realpkg, d)
+
                     for key in rdep_data:
                         if key.startswith("FILERPROVIDES_") or key.startswith("RPROVIDES_"):
                             for subkey in bb.utils.explode_deps(rdep_data[key]):
