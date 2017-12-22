@@ -22,5 +22,6 @@ def get_egl_handler(d, target):
     return provider;
 
 PREFERRED_PROVIDER_virtual/egl = "${@get_egl_handler(d, 'egl')}"
+PREFERRED_PROVIDER_virtual/libgl = "${@get_egl_handler(d, 'libgl')}"
 PREFERRED_PROVIDER_virtual/libgles1 = "${@get_egl_handler(d, 'libgles1')}"
 PREFERRED_PROVIDER_virtual/libgles2 = "${@get_egl_handler(d, 'libgles2')}"
