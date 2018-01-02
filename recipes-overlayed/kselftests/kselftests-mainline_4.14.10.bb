@@ -14,8 +14,8 @@ SRC_URI += "\
     file://0003-selftests-timers-use-LDLIBS-instead-of-LDFLAGS.patch \
 "
 
-SRC_URI[md5sum] = "bacdb9ffdcd922aa069a5e1520160e24"
-SRC_URI[sha256sum] = "f81d59477e90a130857ce18dc02f4fbe5725854911db1e7ba770c7cd350f96a7"
+SRC_URI[md5sum] = "cfab8ee2ee4eb6600a1e7da33a2ff275"
+SRC_URI[sha256sum] = "86baf1374ca003bdd9a43cae7f59cec02b455a6c38c3705aa46b2b68d91ed110"
 
 S = "${WORKDIR}/linux-${PV}"
 
