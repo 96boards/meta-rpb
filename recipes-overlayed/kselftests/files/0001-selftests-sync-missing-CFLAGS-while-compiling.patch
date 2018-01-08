@@ -1,0 +1,45 @@
+From dfceab155cc0bdac8610bdf78fd90e953612415f Mon Sep 17 00:00:00 2001
+From: Anders Roxell <anders.roxell@linaro.org>
+Date: Fri, 5 Jan 2018 10:21:23 +0100
+Subject: [PATCH] selftests: sync: missing CFLAGS while compiling
+
+Based on patch: https://patchwork.kernel.org/patch/10042045/
+
+arch64-linux-gnu-gcc -c sync.c -o sync/sync.o
+sync.c:42:29: fatal error: linux/sync_file.h: No such file or directory
+ #include <linux/sync_file.h>
+                             ^
+CFLAGS is not used during the compile step, so the system instead of
+kernel headers are used.  Fix this by using lib.mk's compile rules and
+remove CFLAGS from the linking step.
+
+Reported-by: Lei Yang <Lei.Yang@windriver.com>
+Signed-off-by: Anders Roxell <anders.roxell@linaro.org>
+---
+
+Upstream-Status: Pending
+
+tools/testing/selftests/sync/Makefile | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
+
+diff --git a/tools/testing/selftests/sync/Makefile b/tools/testing/selftests/sync/Makefile
+index b3c8ba3cb668..58b9336d6c84 100644
+--- a/tools/testing/selftests/sync/Makefile
++++ b/tools/testing/selftests/sync/Makefile
+@@ -27,12 +27,6 @@ OBJS := $(patsubst %,$(OUTPUT)/%,$(OBJS))
+ TESTS := $(patsubst %,$(OUTPUT)/%,$(TESTS))
+ 
+ $(TEST_CUSTOM_PROGS): $(TESTS) $(OBJS)
+-	$(CC) -o $(TEST_CUSTOM_PROGS) $(OBJS) $(TESTS) $(CFLAGS) $(LDFLAGS)
+-
+-$(OBJS): $(OUTPUT)/%.o: %.c
+-	$(CC) -c $^ -o $@
+-
+-$(TESTS): $(OUTPUT)/%.o: %.c
+-	$(CC) -c $^ -o $@
++	$(CC) -o $(TEST_CUSTOM_PROGS) $(OBJS) $(TESTS) $(LDFLAGS)
+ 
+ EXTRA_CLEAN := $(TEST_CUSTOM_PROGS) $(OBJS) $(TESTS)
+-- 
+2.11.0
+
