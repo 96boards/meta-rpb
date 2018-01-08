@@ -26,6 +26,6 @@ do_install() {
 FILES_${PN} = "${INSTALL_PATH}"
 FILES_${PN}-dbg = "${INSTALL_PATH}/*/.debug"
 
-RDEPENDS_${PN} = "bash bc ethtool fuse-utils iproute2 glibc-utils ncurses sudo"
+RDEPENDS_${PN} = "bash bc cpupower ethtool fuse-utils iproute2 glibc-utils ncurses sudo"
 
 INSANE_SKIP_${PN} = "already-stripped"
