@@ -27,7 +27,7 @@ FILES_${PN} = "${INSTALL_PATH}"
 # The bpf tests depend on that the object files are installed as well.
 # OE wont throw an error if files do not exist.
 FILES_${PN} += "${INSTALL_PATH}/bpf/*.o"
-FILES_${PN}-dbg = "${INSTALL_PATH}/*/.debug"
+FILES_${PN}-dbg = "${INSTALL_PATH}/*/.debug /usr/src/debug/*"
 
 RDEPENDS_${PN} = "bash bc ethtool fuse-utils iproute2 glibc-utils ncurses sudo"
 RDEPENDS_append_x86 = " cpupower"
