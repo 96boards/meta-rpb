@@ -13,6 +13,7 @@ SRC_URI += "\
     file://0002-selftests-seccomp-use-LDLIBS-instead-of-LDFLAGS.patch \
     file://0003-selftests-timers-use-LDLIBS-instead-of-LDFLAGS.patch \
     file://0001-x86-ldt-Prevent-LDT-inheritance-on-exec.patch \
+    file://0001-x86-ldt-Make-the-LDT-mapping-RO.patch \
 "
 
 SRC_URI[md5sum] = "bacdb9ffdcd922aa069a5e1520160e24"
