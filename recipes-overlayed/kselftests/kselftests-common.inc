@@ -27,5 +27,6 @@ FILES_${PN} = "${INSTALL_PATH}"
 FILES_${PN}-dbg = "${INSTALL_PATH}/*/.debug"
 
 RDEPENDS_${PN} = "bash bc ethtool fuse-utils iproute2 glibc-utils ncurses sudo"
+RDEPENDS_append_x86 = " cpupower"
 
 INSANE_SKIP_${PN} = "already-stripped"
