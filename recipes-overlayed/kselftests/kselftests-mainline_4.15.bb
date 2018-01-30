@@ -12,11 +12,10 @@ SRC_URI += "\
     file://0001-selftests-net-use-LDLIBS-instead-of-LDFLAGS.patch \
     file://0002-selftests-seccomp-use-LDLIBS-instead-of-LDFLAGS.patch \
     file://0003-selftests-timers-use-LDLIBS-instead-of-LDFLAGS.patch \
-    file://0001-x86-ldt-Prevent-LDT-inheritance-on-exec.patch \
 "
 
-SRC_URI[md5sum] = "bacdb9ffdcd922aa069a5e1520160e24"
-SRC_URI[sha256sum] = "f81d59477e90a130857ce18dc02f4fbe5725854911db1e7ba770c7cd350f96a7"
+SRC_URI[md5sum] = "0d701ac1e2a67d47ce7127432df2c32b"
+SRC_URI[sha256sum] = "5a26478906d5005f4f809402e981518d2b8844949199f60c4b6e1f986ca2a769"
 
 S = "${WORKDIR}/linux-${PV}"
 
