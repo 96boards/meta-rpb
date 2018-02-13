@@ -30,7 +30,8 @@ FILES_${PN} += "${INSTALL_PATH}/bpf/*.o"
 FILES_${PN}-dbg = "${INSTALL_PATH}/*/.debug /usr/src/debug/*"
 
 RDEPENDS_${PN} = "bash bc ethtool fuse-utils iproute2 glibc-utils ncurses sudo"
-RDEPENDS_append_x86 = " cpupower"
+RDEPENDS_${PN}_append_x86 = " cpupower"
+RDEPENDS_${PN}_append_x86-64 = " cpupower"
 
 INSANE_SKIP_${PN} = "already-stripped"
 # Ignore the QA error because kselftests/bpf/ requires object files
