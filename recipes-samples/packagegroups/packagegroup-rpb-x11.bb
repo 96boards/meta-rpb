@@ -5,7 +5,7 @@ REQUIRED_DISTRO_FEATURES = "x11"
 
 SUMMARY_packagegroup-rpb-x11 = "Apps that can be used in X11 Desktop"
 RDEPENDS_packagegroup-rpb-x11 = "\
-    chromium \
+    chromium-x11 \
     ffmpeg \
     glmark2 \
     gps-utils \
