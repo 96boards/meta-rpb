@@ -30,6 +30,8 @@ RDEPENDS_packagegroup-rpb-tests-python = "\
 SUMMARY_packagegroup-rpb-tests-console = "Test apps that can be used in console (no graphics)"
 RDEPENDS_packagegroup-rpb-tests-console = "\
     alsa-utils-speakertest \
+    cpupower \
+    libhugetlbfs-tests \
     ltp \
     stress-ng \
     ptest-runner \
