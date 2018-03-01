@@ -1,0 +1,29 @@
+Upstream-Status: Inappropriate [embedder specific]
+
+This patch disables using vcvt_f32_f16() and vcvt_f16_f32() for __aarch64__.
+They were recently enabled for this particular architecture, but this
+resulted in "vcvt_f16_f32 is not declared in this scope" compilation error.
+
+These instructions are already disabled for Google3 builds:
+https://github.com/google/skia/commit/ba9da88974eac77f93e57bf373ffe4a05a70863f
+
+--- a/third_party/skia/src/jumper/SkJumper_stages.cpp	2018-01-18 14:39:14.811198759 +0100
++++ b/third_party/skia/src/jumper/SkJumper_stages.cpp	2018-01-18 14:41:07.906950490 +0100
+@@ -666,7 +666,7 @@ SI F approx_powf(F x, F y) {
+ }
+ 
+ SI F from_half(U16 h) {
+-#if defined(__aarch64__) && !defined(SK_BUILD_FOR_GOOGLE3)  // Temporary workaround for some Google3 builds.
++#if defined(__aarch64__) && !defined(SK_BUILD_FOR_GOOGLE3) && 0 // Temporary workaround for some Google3 builds.
+     return vcvt_f32_f16(h);
+ 
+ #elif defined(JUMPER_IS_HSW) || defined(JUMPER_IS_AVX512)
+@@ -686,7 +686,7 @@ SI F from_half(U16 h) {
+ }
+ 
+ SI U16 to_half(F f) {
+-#if defined(__aarch64__) && !defined(SK_BUILD_FOR_GOOGLE3)  // Temporary workaround for some Google3 builds.
++#if defined(__aarch64__) && !defined(SK_BUILD_FOR_GOOGLE3) && 0 // Temporary workaround for some Google3 builds.
+     return vcvt_f16_f32(f);
+ 
+ #elif defined(JUMPER_IS_HSW) || defined(JUMPER_IS_AVX512)

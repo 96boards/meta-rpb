@@ -5,8 +5,8 @@ REQUIRED_DISTRO_FEATURES = "wayland"
 
 SUMMARY_packagegroup-rpb-weston = "Apps that can be used in Weston Desktop"
 RDEPENDS_packagegroup-rpb-weston = "\
-    chromium-wayland \
-    chromium-wayland-chromedriver \
+    chromium-ozone-wayland \
+    chromium-ozone-wayland-chromedriver \
     clutter-1.0-examples \
     ffmpeg \
     gps-utils \
