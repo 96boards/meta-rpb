@@ -39,6 +39,9 @@ PACKAGECONFIG_remove_pn-gpsd = "qt"
 PACKAGECONFIG_append_pn-gstreamer1.0-plugins-bad = " kms"
 PACKAGECONFIG_append_pn-ffmpeg = " sdl2"
 
+PREFERRED_PROVIDER_iasl-native = "acpica-native"
+PREFERRED_PROVIDER_iasl = "acpica"
+
 LICENSE_FLAGS_WHITELIST += "commercial_gstreamer1.0-libav commercial_ffmpeg commercial_x264 non-commercial"
 
 # Avoid to duplicate the rootfs tarball by generating both tar.gz/tar.xz
