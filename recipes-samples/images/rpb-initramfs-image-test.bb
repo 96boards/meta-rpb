@@ -1,3 +1,3 @@
 require rpb-initramfs-image.bb
 
-IMAGE_INSTALL += "stress-ng"
+IMAGE_INSTALL += "make stress-ng"
