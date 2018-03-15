@@ -2,6 +2,8 @@ SUMMARY = "Organize packages to avoid duplication across all images"
 
 inherit packagegroup
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 # contains basic dependencies, that can work without graphics/display
 RDEPENDS_packagegroup-rpb = "\
     96boards-tools \
