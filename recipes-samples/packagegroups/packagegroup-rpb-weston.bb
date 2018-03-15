@@ -3,6 +3,8 @@ SUMMARY = "Organize packages to avoid duplication across all images (weston)"
 inherit packagegroup distro_features_check
 REQUIRED_DISTRO_FEATURES = "wayland"
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 SUMMARY_packagegroup-rpb-weston = "Apps that can be used in Weston Desktop"
 RDEPENDS_packagegroup-rpb-weston = "\
     chromium-ozone-wayland \
