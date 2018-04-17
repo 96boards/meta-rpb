@@ -11,7 +11,7 @@ SRC_URI += "\
     file://0001-selftests-lib-allow-to-override-CC-in-the-top-level-Makefile.patch \
     file://0001-selftests-gpio-fix-build-error.patch \
     file://0001-selftests-gpio-use-pkg-config-to-determine-libmount-.patch \
-    file://0001-selftests-net-use-LDLIBS-instead-of-LDFLAGS.patch \
+    file://0001-selftests-net-use-LDLIBS-instead-of-LDFLAGS-next-20180416.patch \
     file://0002-selftests-next-seccomp-use-LDLIBS-instead-of-LDFLAGS.patch \
     file://0003-selftests-next-timers-use-LDLIBS-instead-of-LDFLAGS.patch \
 "
