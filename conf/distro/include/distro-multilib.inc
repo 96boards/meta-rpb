@@ -5,15 +5,15 @@
 # FIXME: use debian multi-arch style paths
 #BASELIB_aarch64 = "lib"
 
-BASELIB_tune-armv7ahf-neon = "lib32"
-BASELIB_armv7a = "lib"
+BASELIB_tune-armv7ahf-neon ?= "lib32"
+BASELIB_armv7a ?= "lib"
 
 require conf/multilib.conf
-MULTILIBS = "multilib:lib32"
+MULTILIBS ?= "multilib:lib32"
 
 # Merge with conf/distro/inclue/arm-defaults.inc?
-DEFAULTTUNE_virtclass-multilib-lib32 = "armv7ahf-neon"
+DEFAULTTUNE_virtclass-multilib-lib32 ?= "armv7ahf-neon"
 
 # Enforce RPM, opkg and dpkg can't parallel install multilib conflicts
-PACKAGE_CLASSES = "package_rpm"
+PACKAGE_CLASSES ?= "package_rpm"
 
