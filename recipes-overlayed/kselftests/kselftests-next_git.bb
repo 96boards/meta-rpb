@@ -4,7 +4,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425
 PV = "4.15+git${SRCPV}"
 SRCREV = "${AUTOREV}"
 
-SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git;protocol=https;branch=master;name=kernel"
+SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git;protocol=https;branch=master;name=kernel-next"
 # Patches inappropriate or not yet merged by upstream
 # Some patches may have been submitted to upstream
 SRC_URI += "\
