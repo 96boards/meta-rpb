@@ -9,4 +9,5 @@ RDEPENDS_packagegroup-rpb-lkft = "\
     kselftests-mainline \
     kselftests-next \
     ${@bb.utils.contains("TARGET_ARCH", "arm", "", "numactl", d)} \
+    tzdata \
     "
