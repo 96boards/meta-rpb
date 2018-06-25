@@ -8,6 +8,6 @@ RDEPENDS_packagegroup-rpb-lkft = "\
     kernel-selftests \
     kselftests-mainline \
     kselftests-next \
-    ${@bb.utils.contains("TARGET_ARCH", "arm", "", "numactl", d)} \
+    ${@bb.utils.contains("TUNE_ARCH", "arm", "", "numactl", d)} \
     tzdata \
     "
