@@ -6,6 +6,7 @@ IMAGE_FEATURES += "package-management ssh-server-openssh hwcodecs"
 
 CORE_IMAGE_BASE_INSTALL += " \
     packagegroup-rpb \
+    haveged \
 "
 
 # docker pulls runc/containerd, which in turn recommend lxc unecessarily
