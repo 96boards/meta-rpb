@@ -5,6 +5,7 @@ inherit packagegroup
 # contains basic dependencies for LKFT
 RDEPENDS_packagegroup-rpb-lkft = "\
     git \
+    haveged \
     kernel-selftests \
     kselftests-mainline \
     kselftests-next \
