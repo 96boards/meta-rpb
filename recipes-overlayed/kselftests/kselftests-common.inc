@@ -1,7 +1,7 @@
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 # kernel selftests dependencies
-DEPENDS = "fuse libcap libcap-ng pkgconfig-native popt rsync-native util-linux clang-native \
+DEPENDS = "elfutils fuse libcap libcap-ng pkgconfig-native popt rsync-native util-linux clang-native \
     ${@bb.utils.contains("TARGET_ARCH", "arm", "", "numactl", d)} \
 "
 
@@ -13,6 +13,9 @@ do_compile() {
     # Make sure to install the user space API used by some tests
     # but not properly declared as a build dependency
     ${MAKE} -C ${S} ARCH=${ARCH} headers_install
+
+    # Specifying sysroot may help Clang find appropriate headers
+    export CLANG="clang --sysroot ${STAGING_DIR_TARGET}"
     ${MAKE} ${KSELFTESTS_ARGS}
 }
 
@@ -29,8 +32,9 @@ FILES_${PN} = "${INSTALL_PATH}"
 FILES_${PN} += "${INSTALL_PATH}/bpf/*.o"
 FILES_${PN}-dbg = "${INSTALL_PATH}/*/.debug /usr/src/debug/*"
 
-RDEPENDS_${PN} = "bash bc ethtool fuse-utils iproute2 glibc-utils ncurses sudo"
-RDEPENDS_${PN} =+ "python3-argparse python3-datetime python3-json python3-pprint python3-subprocess"
+RDEPENDS_${PN} = "bash bc ethtool fuse-utils iproute2 iproute2-tc glibc-utils ncurses sudo"
+RDEPENDS_${PN} =+ "python3-core python3-datetime python3-json python3-pprint"
+RDEPENDS_${PN} =+ "util-linux-uuidgen"
 RDEPENDS_${PN}_append_x86 = " cpupower"
 RDEPENDS_${PN}_append_x86-64 = " cpupower"
 

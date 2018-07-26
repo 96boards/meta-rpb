@@ -50,6 +50,7 @@ IMAGE_FSTYPES_remove = "tar.gz"
 # By default, meta-ti and TI SDK ship tar.xz rootfs tarball for SD card deployment
 # fastboot is preferred for deployment in automation
 IMAGE_FSTYPES_append_omap-a15 = " ext4.gz"
+IMAGE_FSTYPES_append_beaglebone = " ext4.gz"
 
 INHERIT += "buildhistory"
 INHERIT += "image-buildinfo"

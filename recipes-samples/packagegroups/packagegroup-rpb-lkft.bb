@@ -5,8 +5,10 @@ inherit packagegroup
 # contains basic dependencies for LKFT
 RDEPENDS_packagegroup-rpb-lkft = "\
     git \
+    haveged \
     kernel-selftests \
     kselftests-mainline \
     kselftests-next \
-    ${@bb.utils.contains("TARGET_ARCH", "arm", "", "numactl", d)} \
+    ${@bb.utils.contains("TUNE_ARCH", "arm", "", "numactl", d)} \
+    tzdata \
     "
