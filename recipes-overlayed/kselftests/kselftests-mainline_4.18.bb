@@ -9,13 +9,13 @@ SRC_URI += "\
     file://0001-selftests-lib-allow-to-override-CC-in-the-top-level-Makefile.patch \
     file://0001-selftests-gpio-fix-build-error.patch \
     file://0001-selftests-gpio-use-pkg-config-to-determine-libmount-.patch \
-    file://0001-selftests-net-use-LDLIBS-instead-of-LDFLAGS.patch \
+    file://0001-selftests-net-use-LDLIBS-instead-of-LDFLAGS-next-20180416.patch \
     file://0002-selftests-seccomp-use-LDLIBS-instead-of-LDFLAGS.patch \
     file://0003-selftests-timers-use-LDLIBS-instead-of-LDFLAGS.patch \
 "
 
-SRC_URI[md5sum] = "5bb13a03274b66b56c85b26682e407d7"
-SRC_URI[sha256sum] = "9faa1dd896eaea961dc6e886697c0b3301277102e5bc976b2758f9a62d3ccd13"
+SRC_URI[md5sum] = "bee5fe53ee1c3142b8f0c12c0d3348f9"
+SRC_URI[sha256sum] = "19d8bcf49ef530cd4e364a45b4a22fa70714b70349c8100e7308488e26f1eaf1"
 
 S = "${WORKDIR}/linux-${PV}"
 
