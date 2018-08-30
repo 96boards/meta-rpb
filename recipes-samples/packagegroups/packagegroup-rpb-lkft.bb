@@ -10,5 +10,6 @@ RDEPENDS_packagegroup-rpb-lkft = "\
     kselftests-mainline \
     kselftests-next \
     ${@bb.utils.contains("TUNE_ARCH", "arm", "", "numactl", d)} \
+    s-suite \
     tzdata \
     "
