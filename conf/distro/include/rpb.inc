@@ -26,7 +26,7 @@ def get_multilib_handler(d):
 
 # Use a weak include to avoid to produce an error when the file cannot be found.
 # It is the case when we don't want multilib enabled (e.g. on 32bit machines).
-include ${@get_multilib_handler(d)}
+#include ${@get_multilib_handler(d)}
 
 GCCVERSION ?= "linaro-7.2"
 
