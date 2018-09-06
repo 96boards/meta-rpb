@@ -1,0 +1,36 @@
+From d69d0f39bcab849c1c5fd0ae7675ddeae8c7acda Mon Sep 17 00:00:00 2001
+From: Fathi Boudra <fathi.boudra@linaro.org>
+Date: Thu, 29 Jun 2017 09:53:14 +0300
+Subject: [PATCH 3/6] selftests: gpio: use pkg-config to determine libmount
+ CFLAGS/LDLIBS
+
+Fix hardcoded and misplaced libmount headers. Use pkg-config instead to
+figure out CFLAGS/LDLIBS, fixing also their value for cross-compilation.
+
+If pkg-config isn't installed, it gives an error (command not found) and
+gpio test will fail to build because it won't be able to find the headers
+or link to libmount library.
+
+Signed-off-by: Fathi Boudra <fathi.boudra@linaro.org>
+---
+ tools/testing/selftests/gpio/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/tools/testing/selftests/gpio/Makefile b/tools/testing/selftests/gpio/Makefile
+index b1934c8..3225f78 100644
+--- a/tools/testing/selftests/gpio/Makefile
++++ b/tools/testing/selftests/gpio/Makefile
+@@ -18,8 +18,8 @@ override define CLEAN
+ 	$(RM) -r $(EXTRA_DIRS)
+ endef
+ 
+-CFLAGS += -O2 -g -std=gnu99 -Wall -I../../../../usr/include/
+-LDLIBS += -lmount -I/usr/include/libmount
++CFLAGS += -O2 -g -std=gnu99 -Wall -I../../../../usr/include/ $(shell pkg-config --cflags mount)
++LDLIBS += $(shell pkg-config --libs mount)
+ 
+ $(BINARIES):| khdr
+ $(BINARIES): ../../../gpio/gpio-utils.o
+-- 
+2.7.4
+
