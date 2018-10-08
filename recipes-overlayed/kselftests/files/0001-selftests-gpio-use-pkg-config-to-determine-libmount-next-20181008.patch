@@ -1,0 +1,35 @@
+From ff09f4ad44a758367c55e0634b47c0743abafa12 Mon Sep 17 00:00:00 2001
+From: Fathi Boudra <fathi.boudra@linaro.org>
+Date: Thu, 29 Jun 2017 09:53:14 +0300
+Subject: [PATCH] selftests: gpio: use pkg-config to determine libmount
+ CFLAGS/LDLIBS
+
+Fix hardcoded and misplaced libmount headers. Use pkg-config instead to
+figure out CFLAGS/LDLIBS, fixing also their value for cross-compilation.
+
+If pkg-config isn't installed, it gives an error (command not found) and
+gpio test will fail to build because it won't be able to find the headers
+or link to libmount library.
+
+Signed-off-by: Fathi Boudra <fathi.boudra@linaro.org>
+---
+ tools/testing/selftests/gpio/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/tools/testing/selftests/gpio/Makefile b/tools/testing/selftests/gpio/Makefile
+index 46648427d537..7272f1931ccb 100644
+--- a/tools/testing/selftests/gpio/Makefile
++++ b/tools/testing/selftests/gpio/Makefile
+@@ -1,7 +1,7 @@
+ # SPDX-License-Identifier: GPL-2.0
+ 
+-CFLAGS += -O2 -g -std=gnu99 -Wall -I../../../../usr/include/
+-LDLIBS += -lmount -I/usr/include/libmount
++CFLAGS += -O2 -g -std=gnu99 -Wall -I../../../../usr/include/ $(shell pkg-config --cflags mount)
++LDLIBS += $(shell pkg-config --libs mount)
+ 
+ TEST_PROGS := gpio-mockup.sh
+ TEST_FILES := gpio-mockup-sysfs.sh
+-- 
+2.17.1
+
