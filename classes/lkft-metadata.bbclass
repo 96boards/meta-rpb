@@ -40,8 +40,9 @@ addhandler lkftmetadata_eventhandler
 lkftmetadata_eventhandler[eventmask] = "bb.event.BuildCompleted bb.event.BuildStarted"
 
 do_fetch[postfuncs] += "write_srcuri"
-do_fetch[vardepsexclude] += "write_srcuri"
+#do_fetch[vardepsexclude] += "write_srcuri"
 python write_srcuri() {
+    bb.note("Gathering lkftmetadata")
     import re
     pkghistdir = d.getVar('LKFTMETADATA_DIR_PACKAGE', True)
     if not os.path.exists(pkghistdir):
