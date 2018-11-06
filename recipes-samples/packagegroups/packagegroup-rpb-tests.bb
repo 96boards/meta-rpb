@@ -42,6 +42,7 @@ RDEPENDS_packagegroup-rpb-tests-console = "\
     cpupower \
     libhugetlbfs-tests \
     ltp \
+    s-suite \
     stress-ng \
     ptest-runner \
     "
