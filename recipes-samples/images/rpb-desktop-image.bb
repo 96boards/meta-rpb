@@ -14,6 +14,8 @@ CORE_IMAGE_BASE_INSTALL += " \
     packagegroup-rpb-x11 \
 "
 
+CORE_IMAGE_BASE_INSTALL_remove = "haveged"
+
 EXTRA_USERS_PARAMS += "\
 usermod -a -G video linaro; \
 "
