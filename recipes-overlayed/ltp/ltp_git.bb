@@ -26,7 +26,7 @@ PV = "20180118+git${SRCPV}"
 
 DEFAULT_PREFERENCE = "-1"
 
-SRC_URI = "git://github.com/linux-test-project/ltp.git"
+SRC_URI = "git://github.com/linux-test-project/ltp.git;protocol=http"
 
 S = "${WORKDIR}/git"
 
