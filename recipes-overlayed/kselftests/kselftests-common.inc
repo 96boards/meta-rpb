@@ -32,7 +32,7 @@ FILES_${PN} = "${INSTALL_PATH}"
 FILES_${PN} += "${INSTALL_PATH}/bpf/*.o"
 FILES_${PN}-dbg = "${INSTALL_PATH}/*/.debug /usr/src/debug/*"
 
-RDEPENDS_${PN} = "bash bc ethtool fuse-utils iproute2 iproute2-tc iputils-ping iputils-ping6 glibc-utils ncurses sudo"
+RDEPENDS_${PN} = "bash bc ethtool fuse-utils iproute2 iproute2-tc iputils-ping glibc-utils ncurses sudo"
 RDEPENDS_${PN} =+ "python3-core python3-datetime python3-json python3-pprint"
 RDEPENDS_${PN} =+ "util-linux-uuidgen"
 RDEPENDS_${PN}_append_x86 = " cpupower"
