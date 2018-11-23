@@ -22,4 +22,5 @@ RDEPENDS_packagegroup-rpb = "\
     python-modules \
     rsync \
     sshfs-fuse \
+    v4l-utils \
     "
