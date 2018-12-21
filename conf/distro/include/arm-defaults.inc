@@ -11,7 +11,10 @@
 def arm_tune_handler(d):
     features = d.getVar('TUNE_FEATURES', True).split()
     if 'armv7a' in features:
-        tune = 'armv7athf'
+        if 'thumb' in features:
+            tune = 'armv7athf'
+        else:
+            tune = 'armv7ahf'
         if 'bigendian' in features:
             tune += 'b'
         if 'vfpv3' in features:
