@@ -28,7 +28,7 @@ def get_multilib_handler(d):
 # It is the case when we don't want multilib enabled (e.g. on 32bit machines).
 #include ${@get_multilib_handler(d)}
 
-GCCVERSION ?= "linaro-7.2"
+#GCCVERSION ?= "linaro-7.2"
 
 DISTRO_FEATURES_append = " opengl pam systemd ptest"
 DISTRO_FEATURES_remove = "3g sysvinit"
