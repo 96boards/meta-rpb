@@ -52,6 +52,9 @@ IMAGE_FSTYPES_remove = "tar.gz"
 IMAGE_FSTYPES_append_omap-a15 = " ext4.gz"
 IMAGE_FSTYPES_append_beaglebone = " ext4.gz"
 
+# meta-updater is unsafe to include, it fails to parse without setting this:
+OSTREE_INITRAMFS_FSTYPES ??= "${@oe.utils.ifelse(d.getVar('OSTREE_BOOTLOADER', True) == 'u-boot', 'ext4.gz.u-boot', 'ext4.gz')}"
+
 INHERIT += "buildhistory"
 INHERIT += "image-buildinfo"
 BUILDHISTORY_COMMIT = "1"
