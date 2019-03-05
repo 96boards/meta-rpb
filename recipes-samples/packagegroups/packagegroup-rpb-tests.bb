@@ -45,4 +45,5 @@ RDEPENDS_packagegroup-rpb-tests-console = "\
     s-suite \
     stress-ng \
     ptest-runner \
+    usbutils \
     "
