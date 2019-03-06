@@ -40,9 +40,11 @@ SUMMARY_packagegroup-rpb-tests-console = "Test apps that can be used in console 
 RDEPENDS_packagegroup-rpb-tests-console = "\
     alsa-utils-speakertest \
     cpupower \
+    git \
     libhugetlbfs-tests \
     ltp \
     s-suite \
     stress-ng \
     ptest-runner \
+    usbutils \
     "
