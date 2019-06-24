@@ -39,6 +39,11 @@ PACKAGECONFIG_remove_pn-gpsd = "qt"
 PACKAGECONFIG_append_pn-gstreamer1.0-plugins-bad = " kms"
 PACKAGECONFIG_append_pn-ffmpeg = " sdl2"
 
+# The bbappend files for some recipes (e.g. linux-yocto) in meta-virtualization
+# layer need to have 'virtualization' in DISTRO_FEATURES to have effect.
+# (e.g. CONFIG_OVERLAY_FS cfg for docker)
+DISTRO_FEATURES_append = " virtualization"
+
 PREFERRED_PROVIDER_iasl-native = "acpica-native"
 PREFERRED_PROVIDER_iasl = "acpica"
 
