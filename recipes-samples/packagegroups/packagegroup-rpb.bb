@@ -17,9 +17,12 @@ RDEPENDS_packagegroup-rpb = "\
     coreutils \
     cpufrequtils \
     ${@bb.utils.contains("TARGET_ARCH", "arm", "", "docker", d)} \
+    file \
     gptfdisk \
     hostapd \
     htop \
+    ldd \
+    lsof \
     iptables \
     kernel-modules \
     networkmanager \
@@ -30,5 +33,6 @@ RDEPENDS_packagegroup-rpb = "\
     python-modules \
     rsync \
     sshfs-fuse \
+    strace \
     v4l-utils \
     "
