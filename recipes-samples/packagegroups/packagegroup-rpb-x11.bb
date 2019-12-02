@@ -1,6 +1,6 @@
 SUMMARY = "Organize packages to avoid duplication across all images (with X11)"
 
-inherit packagegroup distro_features_check
+inherit packagegroup features_check
 REQUIRED_DISTRO_FEATURES = "x11"
 
 SUMMARY_packagegroup-rpb-x11 = "Apps that can be used in X11 Desktop"
