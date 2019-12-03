@@ -23,7 +23,6 @@ RDEPENDS_packagegroup-rpb-tests-python = "\
     python \
     python-misc \
     python-modules \
-    python-numpy \
     python-pexpect \
     python-pip \
     python-pyyaml \
