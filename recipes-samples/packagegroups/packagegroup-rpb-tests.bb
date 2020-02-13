@@ -14,18 +14,7 @@ PACKAGES = "\
 RDEPENDS_packagegroup-rpb-tests = "\
     packagegroup-core-buildessential \
     packagegroup-rpb-tests-console \    
-    packagegroup-rpb-tests-python \
     packagegroup-rpb-tests-python3 \
-    "
-
-SUMMARY_packagegroup-rpb-tests-python = "Python support for running tests"
-RDEPENDS_packagegroup-rpb-tests-python = "\
-    python \
-    python-misc \
-    python-modules \
-    python-pexpect \
-    python-pip \
-    python-pyyaml \
     "
 
 SUMMARY_packagegroup-rpb-tests-python3 = "Python3 support for running tests"
@@ -33,6 +22,9 @@ RDEPENDS_packagegroup-rpb-tests-python3 = "\
     python3 \
     python3-misc \
     python3-modules \
+    python3-pexpect \
+    python3-pip \
+    python3-pyyaml \
     "
 
 SUMMARY_packagegroup-rpb-tests-console = "Test apps that can be used in console (no graphics)"
