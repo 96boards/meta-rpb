@@ -30,8 +30,8 @@ RDEPENDS_packagegroup-rpb = "\
     networkmanager-nmtui \
     openssh-sftp-server \
     ${@bb.utils.contains("MACHINE_FEATURES", "optee", d.getVar("OPTEE_PACKAGES", True), "", d)} \
-    python-misc \
-    python-modules \
+    python3-misc \
+    python3-modules \
     rsync \
     sshfs-fuse \
     strace \
