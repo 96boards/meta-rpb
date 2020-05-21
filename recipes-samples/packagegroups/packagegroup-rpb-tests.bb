@@ -34,6 +34,7 @@ RDEPENDS_packagegroup-rpb-tests-console = "\
     git \
     libhugetlbfs-tests \
     ltp \
+    net-snmp \
     s-suite \
     stress-ng \
     ptest-runner \
