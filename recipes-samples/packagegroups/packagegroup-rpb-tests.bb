@@ -32,6 +32,7 @@ RDEPENDS_packagegroup-rpb-tests-console = "\
     alsa-utils-speakertest \
     cpupower \
     git \
+    igt-gpu-tools-tests \
     libhugetlbfs-tests \
     ltp \
     net-snmp \
