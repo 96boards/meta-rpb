@@ -38,6 +38,7 @@ PACKAGECONFIG_append_pn-qtbase = " gles2 fontconfig examples"
 PACKAGECONFIG_remove_pn-gpsd = "qt"
 PACKAGECONFIG_append_pn-gstreamer1.0-plugins-bad = " kms"
 PACKAGECONFIG_append_pn-ffmpeg = " sdl2"
+PACKAGECONFIG_append_pn-igt-gpu-tools = " chamelium"
 
 PREFERRED_PROVIDER_iasl-native = "acpica-native"
 PREFERRED_PROVIDER_iasl = "acpica"
