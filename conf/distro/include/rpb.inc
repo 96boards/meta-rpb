@@ -30,7 +30,7 @@ def get_multilib_handler(d):
 
 GCCVERSION ?= "arm-9.2"
 
-DISTRO_FEATURES_append = " opengl pam systemd ptest"
+DISTRO_FEATURES_append = " opengl pam systemd ptest vulkan"
 DISTRO_FEATURES_remove = "3g sysvinit"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 PACKAGECONFIG_append_pn-systemd = " resolved networkd"
