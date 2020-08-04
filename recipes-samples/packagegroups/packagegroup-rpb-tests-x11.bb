@@ -8,6 +8,8 @@ PACKAGES = "\
     "
 RDEPENDS_packagegroup-rpb-tests-x11 = "\
     gst-validate \
+    opengl-es-cts \
+    parallel-deqp-runner \
     piglit \
     x11perf \
     xdpyinfo \
