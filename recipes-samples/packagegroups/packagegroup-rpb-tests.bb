@@ -34,6 +34,8 @@ RDEPENDS_packagegroup-rpb-tests-console = "\
     git \
     i2c-tools \
     igt-gpu-tools-tests \
+    libdrm-tests \
+    libgpiod-tools \
     libhugetlbfs-tests \
     ltp \
     net-snmp \
