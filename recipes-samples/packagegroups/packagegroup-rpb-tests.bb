@@ -44,3 +44,4 @@ RDEPENDS_packagegroup-rpb-tests-console = "\
     ptest-runner \
     usbutils \
     "
+RDEPENDS_packagegroup-rpb-tests-console_remove_libc-musl = "igt-gpu-tools-tests"
