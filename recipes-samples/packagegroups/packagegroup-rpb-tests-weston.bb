@@ -7,5 +7,5 @@ PACKAGES = "\
     packagegroup-rpb-tests-weston \
     "
 RDEPENDS_packagegroup-rpb-tests-weston = "\
-    gst-validate \
+    gst-devtools \
     "
