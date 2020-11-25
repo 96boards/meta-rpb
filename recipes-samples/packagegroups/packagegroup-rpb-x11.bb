@@ -18,6 +18,7 @@ RDEPENDS_packagegroup-rpb-x11 = "\
     mesa-demos \
     openbox \
     openbox-theme-clearlooks \
+    vulkan-tools \
     xf86-video-modesetting \
     xterm \
     "
