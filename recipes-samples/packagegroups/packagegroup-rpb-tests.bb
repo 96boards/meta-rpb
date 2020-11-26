@@ -29,6 +29,7 @@ RDEPENDS_packagegroup-rpb-tests-python3 = "\
 
 SUMMARY_packagegroup-rpb-tests-console = "Test apps that can be used in console (no graphics)"
 RDEPENDS_packagegroup-rpb-tests-console = "\
+    alsa-utils-alsaucm \
     alsa-utils-speakertest \
     cpupower \
     git \
@@ -44,3 +45,4 @@ RDEPENDS_packagegroup-rpb-tests-console = "\
     ptest-runner \
     usbutils \
     "
+RDEPENDS_packagegroup-rpb-tests-console_remove_libc-musl = "igt-gpu-tools-tests"
