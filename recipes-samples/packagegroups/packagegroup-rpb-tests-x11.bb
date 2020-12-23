@@ -11,5 +11,9 @@ RDEPENDS_packagegroup-rpb-tests-x11 = "\
     opengl-es-cts \
     parallel-deqp-runner \
     piglit \
+    x11perf \
+    xdpyinfo \
+    xlsatoms \
+    xlsclients \
     xserver-xorg-xvfb \
     "
