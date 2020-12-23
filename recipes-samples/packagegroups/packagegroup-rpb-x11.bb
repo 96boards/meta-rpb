@@ -3,8 +3,10 @@ SUMMARY = "Organize packages to avoid duplication across all images (with X11)"
 inherit packagegroup features_check
 REQUIRED_DISTRO_FEATURES = "x11"
 
-SUMMARY_packagegroup-rpb-x11 = "Apps that can be used in X11 Desktop"
-RDEPENDS_packagegroup-rpb-x11 = "\
+PACKAGES += "${PN}-utils"
+
+SUMMARY_${PN} = "Apps that can be used in X11 Desktop"
+RDEPENDS_${PN} = "\
     ffmpeg \
     glmark2 \
     gps-utils \
@@ -21,3 +23,21 @@ RDEPENDS_packagegroup-rpb-x11 = "\
     xf86-video-modesetting \
     xterm \
     "
+
+SUMMARY_${PN}-utils = "Additional utils that can be used in X11 Desktop"
+RDEPENDS_${PN}-utils = "\
+    iceauth \
+    sessreg \
+    setxkbmap \
+    xauth \
+    xclock \
+    xgamma \
+    xlsfonts \
+    xmag \
+    xmessage \
+    xrandr \
+    xrdb \
+    xrefresh \
+    xsetmode \
+    xsetroot \
+"
