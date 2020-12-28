@@ -7,6 +7,8 @@ PACKAGES += "${PN}-utils"
 
 SUMMARY_${PN} = "Apps that can be used in X11 Desktop"
 RDEPENDS_${PN} = "\
+    96boards-artwork \
+    feh-autostart \
     ffmpeg \
     glmark2 \
     gps-utils \
