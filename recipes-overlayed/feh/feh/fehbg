@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -x $HOME/.fehbg ] ; then
+	$HOME/.fehbg
+elif [ -r  /usr/share/wallpapers/default.jpg  ] ; then
+	feh --bg-scale /usr/share/wallpapers/default.jpg 
+elif [ -r  /usr/share/wallpapers/default.png  ] ; then
+	feh --bg-scale /usr/share/wallpapers/default.png 
+fi
