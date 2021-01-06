@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=X11 background setup with Feh
+Exec=fehbg
+Type=Application
+Terminal=false
+Categories=
+Icon=
