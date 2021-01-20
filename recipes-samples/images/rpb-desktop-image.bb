@@ -12,6 +12,7 @@ SYSTEMD_DEFAULT_TARGET = "graphical.target"
 
 CORE_IMAGE_BASE_INSTALL += " \
     packagegroup-rpb-x11 \
+    packagegroup-rpb-x11-utils \
 "
 
 EXTRA_USERS_PARAMS += "\
