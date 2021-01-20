@@ -1,10 +1,10 @@
 SUMMARY = "Minimal image"
 
-IMAGE_FEATURES += "splash tools-debug debug-tweaks"
+IMAGE_FEATURES += "splash tools-debug debug-tweaks enable-adbd"
 
 LICENSE = "MIT"
 
-inherit core-image features_check extrausers
+inherit core-image features_check extrausers image-adbd
 
 # let's make sure we have a good image..
 REQUIRED_DISTRO_FEATURES = "pam systemd"
