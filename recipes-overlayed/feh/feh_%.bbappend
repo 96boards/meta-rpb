@@ -11,6 +11,7 @@ do_install_append() {
 }
 
 PACKAGE_BEFORE_PN += "${PN}-autostart"
+RDEPENDS_${PN}-autostart += "${PN}"
 FILES_${PN}-autostart += " \
     ${sysconfdir}/xdg/autostart \
     ${bindir}/fehbg \
