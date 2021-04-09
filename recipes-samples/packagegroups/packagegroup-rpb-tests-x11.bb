@@ -8,6 +8,7 @@ PACKAGES = "\
     "
 RDEPENDS_packagegroup-rpb-tests-x11 = "\
     gst-devtools \
+    libegl-dev \
     opengl-es-cts \
     parallel-deqp-runner \
     piglit \
