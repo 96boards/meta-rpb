@@ -15,5 +15,5 @@ CORE_IMAGE_BASE_INSTALL += " \
 "
 
 EXTRA_USERS_PARAMS += "\
-usermod -a -G weston-launch,video linaro; \
+usermod -a -G video linaro; \
 "
