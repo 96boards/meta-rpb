@@ -31,7 +31,7 @@ SUMMARY_packagegroup-rpb-tests-console = "Test apps that can be used in console 
 RDEPENDS_packagegroup-rpb-tests-console = "\
     alsa-utils-alsaucm \
     alsa-utils-speakertest \
-    cpupower \
+    ${@oe.utils.conditional("PREFERRED_PROVIDER_virtual/kernel", "linux-dummy", "", "cpupower", d)} \
     git \
     i2c-tools \
     igt-gpu-tools-tests \
