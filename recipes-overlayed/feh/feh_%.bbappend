@@ -1,8 +1,8 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI += "file://fehbg file://fehbg.desktop"
 
-do_install_append() {
+do_install:append() {
     install -d ${D}${sysconfdir}/xdg/autostart
     install -m 0644 ${WORKDIR}/fehbg.desktop ${D}${sysconfdir}/xdg/autostart
 
@@ -11,8 +11,8 @@ do_install_append() {
 }
 
 PACKAGE_BEFORE_PN += "${PN}-autostart"
-RDEPENDS_${PN}-autostart += "${PN}"
-FILES_${PN}-autostart += " \
+RDEPENDS:${PN}-autostart += "${PN}"
+FILES:${PN}-autostart += " \
     ${sysconfdir}/xdg/autostart \
     ${bindir}/fehbg \
 "

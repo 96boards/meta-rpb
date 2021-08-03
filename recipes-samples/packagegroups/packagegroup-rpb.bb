@@ -11,7 +11,7 @@ inherit packagegroup
 OPTEE_PACKAGES ?= "optee-test optee-client"
 
 # contains basic dependencies, that can work without graphics/display
-RDEPENDS_packagegroup-rpb = "\
+RDEPENDS:packagegroup-rpb = "\
     96boards-tools \
     alsa-utils-amixer \
     alsa-utils-aplay \

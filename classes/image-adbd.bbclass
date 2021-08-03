@@ -4,7 +4,7 @@
 
 IMAGE_FEATURES[validitems] += "enable-adbd"
 
-PACKAGE_INSTALL_append = " ${@bb.utils.contains('IMAGE_FEATURES', [ 'enable-adbd' ], 'android-tools-adbd', '',d)} "
+PACKAGE_INSTALL:append = " ${@bb.utils.contains('IMAGE_FEATURES', [ 'enable-adbd' ], 'android-tools-adbd', '',d)} "
 
 enable_adbd_at_boot () {
 	touch ${IMAGE_ROOTFS}/var/usb-debugging-enabled

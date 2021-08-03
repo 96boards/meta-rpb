@@ -5,8 +5,8 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit packagegroup features_check
 REQUIRED_DISTRO_FEATURES = "wayland"
 
-SUMMARY_packagegroup-rpb-weston = "Apps that can be used in Weston Desktop"
-RDEPENDS_packagegroup-rpb-weston = "\
+SUMMARY:packagegroup-rpb-weston = "Apps that can be used in Weston Desktop"
+RDEPENDS:packagegroup-rpb-weston = "\
     clutter-1.0-examples \
     ffmpeg \
     gps-utils \

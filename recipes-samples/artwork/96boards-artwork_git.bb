@@ -18,8 +18,8 @@ do_install () {
 	ln -s 96Boardsbackground2HD1.jpg  ${D}${datadir}/wallpapers/96boards-default-wallpaper.jpg
 }
 
-FILES_${PN} = "${datadir}/wallpapers"
+FILES:${PN} = "${datadir}/wallpapers"
 
-ALTERNATIVE_${PN} = "defaultjpg"
+ALTERNATIVE:${PN} = "defaultjpg"
 ALTERNATIVE_LINK_NAME[defaultjpg] = "${datadir}/wallpapers/default.jpg"
 ALTERNATIVE_TARGET[defaultjpg] = "${datadir}/wallpapers/96Boardsbackground2HD1.jpg"
