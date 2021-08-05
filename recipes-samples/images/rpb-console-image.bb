@@ -9,4 +9,4 @@ CORE_IMAGE_BASE_INSTALL += " \
 "
 
 # docker pulls runc/containerd, which in turn recommend lxc unecessarily
-BAD_RECOMMENDATIONS_append = " lxc"
+BAD_RECOMMENDATIONS:append = " lxc"

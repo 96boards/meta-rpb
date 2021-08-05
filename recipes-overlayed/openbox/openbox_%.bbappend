@@ -1,9 +1,9 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI += "file://menu.xml"
 
-do_install_append_rpb() {
+do_install:append:rpb() {
     install -m 0644 ${WORKDIR}/menu.xml ${D}${sysconfdir}/xdg/openbox
 }
 
-RDEPENDS_${PN} += "openbox-xdgmenu"
+RDEPENDS:${PN} += "openbox-xdgmenu"

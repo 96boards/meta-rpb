@@ -6,7 +6,7 @@ PROVIDES = "${PACKAGES}"
 PACKAGES = "\
     packagegroup-rpb-tests-x11 \
     "
-RDEPENDS_packagegroup-rpb-tests-x11 = "\
+RDEPENDS:packagegroup-rpb-tests-x11 = "\
     gst-devtools \
     libegl-dev \
     opengl-es-cts \
