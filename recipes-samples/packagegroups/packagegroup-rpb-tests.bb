@@ -37,7 +37,6 @@ RDEPENDS:packagegroup-rpb-tests-console = "\
     igt-gpu-tools-tests \
     libdrm-tests \
     libgpiod-tools \
-    libhugetlbfs-tests \
     ltp \
     net-snmp \
     s-suite \
