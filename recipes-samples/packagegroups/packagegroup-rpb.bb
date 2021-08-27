@@ -13,6 +13,7 @@ OPTEE_PACKAGES ?= "optee-test optee-client"
 # contains basic dependencies, that can work without graphics/display
 RDEPENDS:packagegroup-rpb = "\
     96boards-tools \
+    alsa-utils-alsaucm \
     alsa-utils-amixer \
     alsa-utils-aplay \
     coreutils \
