@@ -32,6 +32,7 @@ RDEPENDS_packagegroup-rpb-tests-console = "\
     alsa-utils-alsaucm \
     alsa-utils-speakertest \
     cpupower \
+    cryptsetup \
     git \
     i2c-tools \
     igt-gpu-tools-tests \
