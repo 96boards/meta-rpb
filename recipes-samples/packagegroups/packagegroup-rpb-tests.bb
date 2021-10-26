@@ -32,17 +32,27 @@ RDEPENDS_packagegroup-rpb-tests-console = "\
     alsa-utils-alsaucm \
     alsa-utils-speakertest \
     cpupower \
+    crash \
+    cryptsetup \
+    dhrystone \
     git \
     i2c-tools \
     igt-gpu-tools-tests \
+    iozone3 \
     libdrm-tests \
     libgpiod-tools \
     libhugetlbfs-tests \
+    lmbench \
     ltp \
+    mbw \
     net-snmp \
     s-suite \
     stress-ng \
+    sysbench \
     ptest-runner \
+    tinymembench \
+    tiobench \
     usbutils \
+    whetstone \
     "
 RDEPENDS_packagegroup-rpb-tests-console_remove_libc-musl = "igt-gpu-tools-tests"
