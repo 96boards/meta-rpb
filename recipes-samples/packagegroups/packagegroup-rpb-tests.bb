@@ -32,17 +32,26 @@ RDEPENDS:packagegroup-rpb-tests-console = "\
     alsa-utils-alsaucm \
     alsa-utils-speakertest \
     ${@oe.utils.conditional("PREFERRED_PROVIDER_virtual/kernel", "linux-dummy", "", "cpupower", d)} \
+    crash \
     cryptsetup \
+    dhrystone \
     git \
     i2c-tools \
     igt-gpu-tools-tests \
+    iozone3 \
     libdrm-tests \
     libgpiod-tools \
+    lmbench \
     ltp \
+    mbw \
     net-snmp \
     s-suite \
     stress-ng \
+    sysbench \
     ptest-runner \
+    tinymembench \
+    tiobench \
     usbutils \
+    whetstone \
     "
 RDEPENDS:packagegroup-rpb-tests-console:remove:libc-musl = "igt-gpu-tools-tests"
