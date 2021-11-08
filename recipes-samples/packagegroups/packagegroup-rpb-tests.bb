@@ -49,6 +49,7 @@ RDEPENDS_packagegroup-rpb-tests-console = "\
     s-suite \
     stress-ng \
     sysbench \
+    pm-qa \
     ptest-runner \
     tinymembench \
     tiobench \
