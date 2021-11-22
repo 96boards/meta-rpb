@@ -4,7 +4,7 @@ SECTION = "x11/graphics"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=751419260aa954499f7abaabaa882bbe"
 
-SRC_URI = "git://github.com/96boards/96boards-artwork;protocol=https"
+SRC_URI = "git://github.com/96boards/96boards-artwork;protocol=https;branch=master"
 SRCREV = "066d5b151cbd0d3595a16e5f28762d78389d3548"
 PV = "0.0+git${SRCPV}"
 
