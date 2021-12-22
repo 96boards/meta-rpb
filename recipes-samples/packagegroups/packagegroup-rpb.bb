@@ -29,6 +29,7 @@ RDEPENDS:packagegroup-rpb = "\
     kernel-modules \
     networkmanager \
     networkmanager-nmtui \
+    ntp \
     openssh-sftp-server \
     ${@bb.utils.contains("MACHINE_FEATURES", "optee", d.getVar("OPTEE_PACKAGES", True), "", d)} \
     python3-misc \
