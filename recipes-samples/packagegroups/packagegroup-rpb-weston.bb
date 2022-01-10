@@ -9,8 +9,6 @@ SUMMARY_packagegroup-rpb-weston = "Apps that can be used in Weston Desktop"
 RDEPENDS_packagegroup-rpb-weston = "\
     clutter-1.0-examples \
     ffmpeg \
-    gps-utils \
-    gpsd \
     gstreamer1.0-plugins-bad-meta \
     gstreamer1.0-plugins-base-meta \
     gstreamer1.0-plugins-good-meta \

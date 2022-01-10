@@ -11,8 +11,6 @@ RDEPENDS_${PN} = "\
     feh-autostart \
     ffmpeg \
     glmark2 \
-    gps-utils \
-    gpsd \
     gstreamer1.0-plugins-bad-meta \
     gstreamer1.0-plugins-base-meta \
     gstreamer1.0-plugins-good-meta \
