@@ -20,6 +20,8 @@ RDEPENDS:packagegroup-rpb = "\
     cpufrequtils \
     ${@bb.utils.contains("TARGET_ARCH", "arm", "", "docker", d)} \
     file \
+    gps-utils \
+    gpsd \
     gptfdisk \
     hostapd \
     htop \
