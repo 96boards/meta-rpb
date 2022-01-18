@@ -36,6 +36,8 @@ RDEPENDS:packagegroup-rpb-tests-console = "\
     cryptsetup \
     dhrystone \
     git \
+    gps-utils \
+    gpsd \
     i2c-tools \
     igt-gpu-tools-tests \
     iozone3 \
