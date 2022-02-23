@@ -43,7 +43,7 @@ PACKAGECONFIG:append:pn-igt-gpu-tools = " chamelium"
 PREFERRED_PROVIDER_iasl-native = "acpica-native"
 PREFERRED_PROVIDER_iasl = "acpica"
 
-LICENSE_FLAGS_WHITELIST += "commercial_gstreamer1.0-libav commercial_ffmpeg commercial_x264 non-commercial"
+LICENSE_FLAGS_ACCEPTED += "commercial_gstreamer1.0-libav commercial_ffmpeg commercial_x264 non-commercial"
 
 # Avoid to duplicate the rootfs tarball by generating both tar.gz/tar.xz
 IMAGE_FSTYPES:remove = "tar.gz"
