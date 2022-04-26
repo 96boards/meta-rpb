@@ -36,6 +36,7 @@ RDEPENDS:packagegroup-rpb-tests-console = "\
     crash \
     cryptsetup \
     dhrystone \
+    ethtool \
     git \
     gps-utils \
     gpsd \
