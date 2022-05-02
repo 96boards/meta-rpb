@@ -32,6 +32,7 @@ RDEPENDS_packagegroup-rpb-tests-console = "\
     alsa-utils-alsaucm \
     alsa-utils-speakertest \
     cpupower \
+    cmake \
     crash \
     cryptsetup \
     dhrystone \
