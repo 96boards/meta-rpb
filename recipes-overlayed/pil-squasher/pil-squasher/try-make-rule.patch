@@ -1,0 +1,14 @@
+Index: git/Makefile
+===================================================================
+--- git.orig/Makefile
++++ git/Makefile
+@@ -10,6 +10,9 @@ OBJS := $(SRCS:.c=.o)
+ $(OUT): $(OBJS)
+ 	$(CC) $(LDFLAGS) -o $@ $^
+ 
++pil-squasher.o: pil-squasher.c
++	$(CC) $(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c -o $@ $<
++
+ install: $(OUT)
+ 	install -D -m 755 $< $(DESTDIR)$(prefix)/bin/$<
+ 
