@@ -32,9 +32,11 @@ RDEPENDS:packagegroup-rpb-tests-console = "\
     alsa-utils-alsaucm \
     alsa-utils-speakertest \
     ${@oe.utils.conditional("PREFERRED_PROVIDER_virtual/kernel", "linux-dummy", "", "cpupower", d)} \
+    cmake \
     crash \
     cryptsetup \
     dhrystone \
+    ethtool \
     git \
     gps-utils \
     gpsd \
