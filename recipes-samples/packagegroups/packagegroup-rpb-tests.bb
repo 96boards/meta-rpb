@@ -43,11 +43,13 @@ RDEPENDS:packagegroup-rpb-tests-console = "\
     i2c-tools \
     igt-gpu-tools-tests \
     iozone3 \
+    iperf3 \
     libdrm-tests \
     libgpiod-tools \
     lmbench \
     ltp \
     mbw \
+    netperf \
     net-snmp \
     s-suite \
     stress-ng \
