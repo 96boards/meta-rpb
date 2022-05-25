@@ -56,3 +56,6 @@ IMAGE_FSTYPES:append:beaglebone = " ext4.gz"
 INHERIT += "buildhistory"
 INHERIT += "image-buildinfo"
 BUILDHISTORY_COMMIT = "1"
+
+require conf/distro/include/yocto-uninative.inc
+INHERIT += "uninative"
