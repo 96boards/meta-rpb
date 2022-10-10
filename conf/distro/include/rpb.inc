@@ -28,7 +28,7 @@ def get_multilib_handler(d):
 # It is the case when we don't want multilib enabled (e.g. on 32bit machines).
 #include ${@get_multilib_handler(d)}
 
-GCCVERSION ?= "arm-11.2"
+GCCVERSION ?= "arm-11.3"
 
 DISTRO_FEATURES:append = " opengl pam systemd ptest vulkan"
 DISTRO_FEATURES:remove = "3g sysvinit"
