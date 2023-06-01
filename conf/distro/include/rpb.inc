@@ -29,6 +29,8 @@ def get_multilib_handler(d):
 #include ${@get_multilib_handler(d)}
 
 GCCVERSION ?= "arm-12.2"
+# Remove gcc specific -fcanon-prefix-map option, added in gcc-13+
+DEBUG_PREFIX_MAP:remove = "-fcanon-prefix-map"
 
 DISTRO_FEATURES:append = " opengl pam systemd ptest vulkan"
 DISTRO_FEATURES:remove = "3g sysvinit"
