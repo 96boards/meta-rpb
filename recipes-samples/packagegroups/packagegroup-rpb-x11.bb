@@ -39,6 +39,5 @@ RDEPENDS:${PN}-utils = "\
     xrandr \
     xrdb \
     xrefresh \
-    xsetmode \
     xsetroot \
 "
