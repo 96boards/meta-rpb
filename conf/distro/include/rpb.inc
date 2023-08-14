@@ -13,6 +13,10 @@ require conf/distro/include/egl.inc
 # to make the python below work. Local, site and auto.conf will override it.
 TCMODE ?= "default"
 
+# defaultsetup.conf does include the right file for the init manager setup,
+# force it here to systemd in order to always have the right configuration.
+INIT_MANAGER = "systemd"
+
 # Enable multilib conditionally, only for aarch64 with default toolchain combination
 # Other combinations aren't supported
 def get_multilib_handler(d):
@@ -28,9 +32,8 @@ def get_multilib_handler(d):
 # It is the case when we don't want multilib enabled (e.g. on 32bit machines).
 #include ${@get_multilib_handler(d)}
 
-DISTRO_FEATURES:append = " opengl pam systemd ptest vulkan"
-DISTRO_FEATURES:remove = "3g sysvinit"
-VIRTUAL-RUNTIME_init_manager = "systemd"
+DISTRO_FEATURES:append = " opengl pam ptest vulkan"
+DISTRO_FEATURES:remove = "3g"
 PACKAGECONFIG:append:pn-systemd = " resolved networkd"
 PACKAGECONFIG:append:pn-qtbase = " gles2 fontconfig examples"
 PACKAGECONFIG:remove:pn-gpsd = "qt"
