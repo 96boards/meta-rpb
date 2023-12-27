@@ -40,6 +40,7 @@ PACKAGECONFIG:remove:pn-gpsd = "qt"
 PACKAGECONFIG:append:pn-gstreamer1.0-plugins-bad = " kms"
 PACKAGECONFIG:append:pn-ffmpeg = " sdl2"
 PACKAGECONFIG:append:pn-igt-gpu-tools = " chamelium"
+PACKAGECONFIG:append:pn-networkmanager = " nmtui"
 
 PREFERRED_PROVIDER_iasl-native = "acpica-native"
 PREFERRED_PROVIDER_iasl = "acpica"
