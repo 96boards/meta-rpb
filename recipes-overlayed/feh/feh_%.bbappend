@@ -4,10 +4,10 @@ SRC_URI += "file://fehbg file://fehbg.desktop"
 
 do_install:append() {
     install -d ${D}${sysconfdir}/xdg/autostart
-    install -m 0644 ${WORKDIR}/fehbg.desktop ${D}${sysconfdir}/xdg/autostart
+    install -m 0644 ${UNPACKDIR}/fehbg.desktop ${D}${sysconfdir}/xdg/autostart
 
     install -d ${D}${bindir}
-    install -m 0755 ${WORKDIR}/fehbg ${D}${bindir}
+    install -m 0755 ${UNPACKDIR}/fehbg ${D}${bindir}
 }
 
 PACKAGE_BEFORE_PN += "${PN}-autostart"
