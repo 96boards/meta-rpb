@@ -18,7 +18,6 @@ RDEPENDS:packagegroup-rpb = "\
     alsa-utils-aplay \
     coreutils \
     cpufrequtils \
-    ${@bb.utils.contains("TARGET_ARCH", "arm", "", "docker", d)} \
     file \
     gps-utils \
     gpsd \
