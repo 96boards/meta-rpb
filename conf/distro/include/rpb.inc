@@ -32,7 +32,7 @@ def get_multilib_handler(d):
 # It is the case when we don't want multilib enabled (e.g. on 32bit machines).
 #include ${@get_multilib_handler(d)}
 
-DISTRO_FEATURES:append = " opengl pam ptest vulkan"
+DISTRO_FEATURES:append = " opengl pam ptest vulkan virtualization"
 DISTRO_FEATURES:remove = "3g"
 PACKAGECONFIG:append:pn-systemd = " resolved networkd"
 PACKAGECONFIG:append:pn-qtbase = " gles2 fontconfig examples"
