@@ -1,6 +1,6 @@
 SUMMARY = "Minimal image"
 
-IMAGE_FEATURES += "splash tools-debug debug-tweaks enable-adbd"
+IMAGE_FEATURES += "splash tools-debug allow-empty-password empty-root-password allow-root-login post-install-logging"
 
 LICENSE = "MIT"
 
