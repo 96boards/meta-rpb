@@ -16,5 +16,5 @@ RDEPENDS:packagegroup-rpb-tests-x11 = "\
     xdpyinfo \
     xlsatoms \
     xlsclients \
-    xserver-xorg-xvfb \
     "
+#    xserver-xorg-xvfb
